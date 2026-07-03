@@ -116,7 +116,17 @@
     position: relative; width: min(520px, 92vw); aspect-ratio: 620/436;
     perspective: 2200px; container-type: inline-size;
     margin-left: calc(100% - min(520px, 92vw));
+    transform: scale(1.22); transform-origin: 100% 50%;
+    transition: transform .7s cubic-bezier(.4,.1,.2,1);
   }
+  .flipboek.open { transform: scale(1); }
+  .flip-hero .flipnav {
+    width: min(520px, 92vw); margin-left: calc(100% - min(520px, 92vw));
+    margin-top: 58px; justify-content: center;
+    transform: translateX(25%);
+    transition: transform .7s cubic-bezier(.4,.1,.2,1), margin-top .7s cubic-bezier(.4,.1,.2,1);
+  }
+  .flipboek.open + .flipnav { transform: translateX(0); margin-top: 22px; }
   .basis-rechts { position: absolute; right: 0; top: 0; width: 50%; height: 100%; }
   .vel {
     position: absolute; right: 0; top: 0; width: 50%; height: 100%;
@@ -281,7 +291,8 @@
     h2 { font-size: 29px; }
     .boekwrap { order: -1; }
     .flip-hero { order: -1; }
-    .flipboek { margin-left: auto; margin-right: auto; }
+    .flipboek { margin-left: auto; margin-right: auto; transform: scale(1); }
+    .flip-hero .flipnav { margin: 14px auto 0; transform: none; }
     .boek { width: 240px; height: 348px; padding: 18px 14px 15px; }
     .b-titel { font-size: 25px; }
     .b-dominos svg { width: 23px; height: 23px; }
@@ -454,7 +465,7 @@
 
         </div>
 
-        <div class="flipnav" style="justify-content:center; margin-top:16px;">
+        <div class="flipnav">
           <button class="fn" id="fn-terug" aria-label="Vorige pagina">‹</button>
           <span class="fliphint">Klik op het boek om te bladeren</span>
           <button class="fn" id="fn-verder" aria-label="Volgende pagina">›</button>
@@ -792,7 +803,7 @@
     const v = vellen[omgeslagen];
     v.classList.add('om'); v.style.zIndex = 40;
     setTimeout(zetZ, 880);
-    omgeslagen++; zetKnoppen();
+    omgeslagen++; zetKnoppen(); document.getElementById('flipboek').classList.toggle('open', omgeslagen > 0);
   }
   function bladerTerug() {
     if (omgeslagen <= 0) return;
@@ -800,7 +811,7 @@
     const v = vellen[omgeslagen];
     v.classList.remove('om'); v.style.zIndex = 40;
     setTimeout(zetZ, 880);
-    zetKnoppen();
+    zetKnoppen(); document.getElementById('flipboek').classList.toggle('open', omgeslagen > 0);
   }
   vellen.forEach(v => v.addEventListener('click', (e) => {
     if (e.target.closest('a')) return;
