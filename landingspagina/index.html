@@ -265,8 +265,9 @@
 
   /* ---------- popup ---------- */
   .popup-achter {
-    display: none; position: fixed; inset: 0; background: rgba(41,39,56,.55); z-index: 100;
+    display: none; position: fixed; inset: 0; background: rgba(41,39,56,.45); z-index: 100;
     align-items: center; justify-content: center; padding: 24px;
+    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
   }
   .popup-achter.zichtbaar { display: flex; }
   .popup {
@@ -342,7 +343,7 @@
 <path d="M62.5512 35.1299L62.5303 35.0491C62.5095 34.9393 62.4512 34.8419 62.3679 34.7673C62.5074 34.6885 62.5949 34.5393 62.5949 34.3797C62.5991 34.2492 62.5449 34.1248 62.445 34.0378C62.2992 33.9342 62.1202 33.8886 61.9432 33.9052C61.7995 33.9052 61.6559 33.9155 61.5122 33.9383L61.4727 33.9446V35.534H61.8453V34.9082H61.937C62.0619 34.9123 62.1243 34.9455 62.166 35.1382C62.191 35.2646 62.2264 35.3869 62.2722 35.5091L62.2847 35.5361H62.6844L62.6449 35.4656C62.6053 35.3578 62.572 35.2459 62.5491 35.134L62.5512 35.1299ZM62.2222 34.4046C62.2222 34.5289 62.1243 34.6077 61.964 34.6077H61.8474V34.216C61.8891 34.2119 61.9307 34.2098 61.9724 34.2098C62.1389 34.2098 62.2243 34.2761 62.2243 34.4046H62.2222Z" fill="#292738"/>
 <path d="M26.6736 28.3273C19.301 28.6816 16.9836 28.7749 10.6479 29.5624C12.9403 22.3259 12.9132 16.3744 13.0985 12.0309C13.1131 11.6931 13.0923 11.3532 13.0381 11.0196C12.8258 9.7472 11.1185 10.5098 10.3918 11.0009C10.0191 11.2517 9.62562 11.4672 9.21338 11.6433C8.75949 11.8381 8.26396 11.9107 7.81423 12.0909C7.20835 12.3334 8.74283 14.2959 9.40701 14.7041C9.53818 14.787 9.61521 14.93 9.61105 15.0854C9.57982 17.3007 9.43616 24.2283 7.09384 29.9685C5.01177 30.2379 1.72003 30.8119 0.468708 33.0749C-0.212126 34.3037 -0.237111 36.2745 0.970486 37.2174C1.58886 37.7023 2.41544 37.8059 3.20246 37.7976C6.92727 37.7603 8.95104 33.1329 9.13634 32.8366C9.14883 32.8158 9.1759 32.7661 9.20713 32.7039C8.16402 32.7433 7.12298 32.8448 6.09236 33.0127C5.728 33.079 5.40112 33.2759 5.17626 33.566C4.91183 33.9121 4.60993 34.2291 4.27472 34.5089C4.15188 34.6208 4.00197 34.6975 3.84165 34.7368C3.71673 34.7638 3.58556 34.7431 3.47521 34.6809C3.4419 34.6602 3.41066 34.6374 3.38568 34.6084C3.29823 34.4985 3.25451 34.3597 3.267 34.2188C3.29823 33.8582 3.47937 33.5287 3.7667 33.307C4.07901 33.0562 4.43504 32.8656 4.81814 32.7495C4.97638 32.6998 5.13461 32.6604 5.29493 32.6231C5.39279 32.6003 5.49065 32.5796 5.5885 32.5589C5.5885 32.5589 5.69469 32.5402 5.88624 32.5091C5.89249 32.5071 5.89873 32.5029 5.9029 32.4967L5.89665 32.5071C10.904 31.7424 22.5136 31.7859 22.5219 31.7859C26.6756 31.8709 26.6756 28.3273 26.6756 28.3273H26.6736Z" fill="#292738"/>
 </svg>
-    <a class="btn klein" href="#aanmelden">Ontvang de gratis preview</a>
+    <a class="btn klein" href="#aanmelden" id="open-popup">Ontvang de gratis preview</a>
   </div>
 </header>
 
@@ -744,7 +745,7 @@
 <div class="popup-achter" id="popup">
   <div class="popup">
     <button class="sluit" aria-label="Sluiten" onclick="sluitPopup()">✕</button>
-    <div class="p-kicker">Voordat je gaat</div>
+    <div class="p-kicker">Gratis preview</div>
     <h3>Wil je de gratis preview?</h3>
     <p class="p-sub">Laat je voornaam en e-mailadres achter en ontvang als eerste een preview van <em>Wat als het nu wél lukt?</em></p>
     <form class="preview-form" novalidate>
@@ -831,6 +832,10 @@
     try { localStorage.setItem("ll_popup", "1"); } catch(e) {}
   }
   function sluitPopup() { document.getElementById("popup").classList.remove("zichtbaar"); }
+  document.getElementById("open-popup").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("popup").classList.add("zichtbaar");
+  });
   window.addEventListener("scroll", () => {
     const d = document.documentElement;
     if (window.scrollY / (d.scrollHeight - d.clientHeight) > 0.55) toonPopup();
