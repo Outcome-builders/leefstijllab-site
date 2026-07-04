@@ -39,11 +39,13 @@
   header { position: sticky; top: 0; z-index: 50; background: rgba(253,252,241,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--creme-400); }
   header .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1080px; margin: 0 auto; }
   header .logo { height: 40px; width: auto; display: block; }
-  .btn { display: inline-block; font-family: var(--font-body); font-weight: 600; font-size: 16px; background: var(--yellow); color: var(--purple); border: none; cursor: pointer; padding: 15px 30px; border-radius: 14px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(41,39,56,.22); background: var(--yellow-400); }
+  .btn { display: inline-block; font-family: var(--font-body); font-weight: 600; font-size: 16px; background: var(--purple); color: var(--creme); border: none; cursor: pointer; padding: 15px 30px; border-radius: 14px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(41,39,56,.25); background: var(--purple-300); }
   .btn.klein { padding: 11px 22px; font-size: 14px; }
   .btn.ghost { background: transparent; border: 2px solid var(--purple); color: var(--purple); }
   .btn.ghost:hover { background: rgba(41,39,56,.06); }
+  .slot .btn { background: var(--yellow); color: var(--purple); }
+  .slot .btn:hover { background: var(--yellow-400); }
   .slot .btn.ghost { background: transparent; border-color: var(--creme); color: var(--creme); }
 
   /* hero */

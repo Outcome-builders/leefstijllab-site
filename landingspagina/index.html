@@ -43,11 +43,13 @@
   header .logo { height: 40px; width: auto; display: block; }
   .btn {
     display: inline-block; font-family: var(--font-body); font-weight: 600; font-size: 16px;
-    background: var(--yellow); color: var(--purple); border: none; cursor: pointer;
+    background: var(--purple); color: var(--creme); border: none; cursor: pointer;
     padding: 15px 30px; border-radius: 14px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(41,39,56,.22); background: var(--yellow-400); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(41,39,56,.25); background: var(--purple-300); }
   .btn.klein { padding: 11px 22px; font-size: 14px; }
+  .stickybalk .btn { background: var(--yellow); color: var(--purple); }
+  .stickybalk .btn:hover { background: var(--yellow-400); }
 
   /* ---------- hero ---------- */
   .hero { padding: 72px 0 80px; }
@@ -71,7 +73,7 @@
   .veld input::placeholder { color: var(--purple-100); }
   form .btn { width: 100%; margin-top: 4px; }
   .hero-cta { max-width: 440px; }
-  .btn.groot { display: block; width: 100%; font-size: 18px; padding: 19px 38px; text-align: center; box-shadow: 0 6px 20px rgba(185,198,70,.35); }
+  .btn.groot { display: block; width: 100%; font-size: 18px; padding: 19px 38px; text-align: center; box-shadow: 0 6px 20px rgba(41,39,56,.3); }
   .micro { font-size: 12px; color: var(--grijs-700); margin-top: 12px; line-height: 1.55; }
   .succes { display: none; background: var(--green-100); border: 1.5px solid var(--green-200); border-radius: 12px; padding: 18px; font-size: 14.5px; line-height: 1.6; }
   .succes strong { color: var(--green-500); }
