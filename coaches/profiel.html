@@ -204,7 +204,7 @@
         <div class="rolregel">${c.rol} · ${c.praktijk}</div>
         <div class="plaats">${c.plaats} (${c.provincie})</div>
         <div class="certbadge"><svg><use href="#domino"/></svg>Gecertificeerd LeefstijlLab Coach · ${c.lichting}</div>
-        <div class="exps">${c.expertises.map(e => `<span class="exp">${e}</span>`).join("")}</div>
+        <div class="exps"><span class="exp">Eetgedrag</span><span class="exp">Beweeggedrag</span><span class="exp">Slaapgedrag</span><span class="exp">Drinkgedrag</span></div>
       </div>
     </div>
 
@@ -226,9 +226,13 @@
 
       <div class="kolom-r">
         <div class="blok">
-          <h3>Expertisegebieden</h3>
+          <h3>Leefstijldomeinen</h3>
+          <p class="sub-p" style="margin-bottom:12px">Als gecertificeerd LeefstijlLab Coach begeleidt ${c.naam.split(" ")[0]} op alle vier de domeinen:</p>
           <ul class="infolijst">
-            ${c.expertises.map(e => `<li><svg><use href="#check"/></svg><span><strong>${e}</strong></span></li>`).join("")}
+            <li><svg><use href="#check"/></svg><span><strong>Eetgedrag</strong></span></li>
+            <li><svg><use href="#check"/></svg><span><strong>Beweeggedrag</strong></span></li>
+            <li><svg><use href="#check"/></svg><span><strong>Slaapgedrag</strong></span></li>
+            <li><svg><use href="#check"/></svg><span><strong>Drinkgedrag</strong></span></li>
           </ul>
         </div>
         <div class="blok">

@@ -106,8 +106,8 @@
   .coachkaart .naam { font-family: var(--font-head); font-size: 21px; letter-spacing: .5px; }
   .coachkaart .rol { font-size: 13.5px; font-weight: 600; color: var(--green-500); margin-top: 2px; }
   .coachkaart .plaats { font-size: 12.5px; color: var(--grijs-700); margin-top: 3px; }
-  .coachkaart .exps { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
-  .coachkaart .exp { font-size: 11px; font-weight: 700; background: var(--creme-300); border-radius: 14px; padding: 4px 11px; color: var(--purple-300); }
+  .coachkaart .domeinregel { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; font-size: 12px; font-weight: 700; color: var(--green-500); }
+  .coachkaart .domeinregel svg { width: 15px; height: 15px; flex: 0 0 auto; }
   .coachkaart .quote { font-size: 12.5px; color: var(--purple-200); font-style: italic; margin-top: 13px; line-height: 1.5; }
   .coachkaart .bekijk { margin-top: auto; padding-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--green-500); }
   .geen { display: none; text-align: center; padding: 50px 20px; color: var(--grijs-700); background: var(--creme-100); border: 1.5px dashed var(--creme-400); border-radius: 18px; }
@@ -183,7 +183,7 @@
   <div class="wrap">
     <span class="kicker">Het LeefstijlLab netwerk</span>
     <h1>Vind jouw <span class="marker">LeefstijlLab Coach</span></h1>
-    <p class="sub">Elke coach in dit netwerk rondde de LeefstijlLab opleiding succesvol af en draagt de titel LeefstijlLab Coach. Verschillende achtergronden, verschillende expertises, één wetenschappelijk onderbouwde methode.</p>
+    <p class="sub">Elke coach in dit netwerk rondde de LeefstijlLab opleiding succesvol af en draagt de titel LeefstijlLab Coach. Verschillende achtergronden, één wetenschappelijk onderbouwde methode, en allemaal thuis in alle vier de leefstijldomeinen: eet-, beweeg-, slaap- en drinkgedrag.</p>
     <div class="proof">
       <span class="p-item"><svg><use href="#check"/></svg>Gecertificeerd LeefstijlLab Coach</span>
       <span class="p-item"><svg><use href="#check"/></svg>Opgeleid in de gedragsmethode</span>
@@ -204,9 +204,6 @@
         <select id="f-provincie">
           <option value="">Alle provincies</option>
         </select>
-      </div>
-      <div class="expertise-chips" id="f-expertises">
-        <span class="chiplabel">Expertise:</span>
       </div>
     </div>
 
@@ -264,10 +261,8 @@
   const fZoek = document.getElementById("f-zoek");
   const fRol = document.getElementById("f-rol");
   const fProv = document.getElementById("f-provincie");
-  const fExp = document.getElementById("f-expertises");
   const fAantal = document.getElementById("f-aantal");
   const fReset = document.getElementById("f-reset");
-  let actieveExpertises = new Set();
 
   function initialen(naam) {
     return naam.split(" ").filter(w => w[0] === w[0].toUpperCase()).map(w => w[0]).slice(0,2).join("");
@@ -276,15 +271,6 @@
   // filteropties vullen op basis van data
   [...new Set(COACHES.map(c => c.rol))].sort().forEach(r => fRol.insertAdjacentHTML("beforeend", `<option>${r}</option>`));
   [...new Set(COACHES.map(c => c.provincie))].sort().forEach(p => fProv.insertAdjacentHTML("beforeend", `<option>${p}</option>`));
-  [...new Set(COACHES.flatMap(c => c.expertises))].sort().forEach(e => {
-    fExp.insertAdjacentHTML("beforeend", `<button class="fchip" data-exp="${e}">${e}</button>`);
-  });
-  fExp.querySelectorAll(".fchip").forEach(ch => ch.addEventListener("click", () => {
-    const e = ch.dataset.exp;
-    actieveExpertises.has(e) ? actieveExpertises.delete(e) : actieveExpertises.add(e);
-    ch.classList.toggle("actief");
-    render();
-  }));
 
   function render() {
     const q = fZoek.value.trim().toLowerCase();
@@ -292,7 +278,6 @@
     const gefilterd = COACHES.filter(c => {
       if (rol && c.rol !== rol) return false;
       if (prov && c.provincie !== prov) return false;
-      if (actieveExpertises.size && ![...actieveExpertises].every(e => c.expertises.includes(e))) return false;
       if (q && !(c.naam + " " + c.praktijk + " " + c.plaats).toLowerCase().includes(q)) return false;
       return true;
     });
@@ -304,20 +289,18 @@
         <span class="naam">${c.naam}</span>
         <span class="rol">${c.rol} · ${c.praktijk}</span>
         <span class="plaats">${c.plaats} (${c.provincie})</span>
-        <span class="exps">${c.expertises.map(e => `<span class="exp">${e}</span>`).join("")}</span>
+        <span class="domeinregel"><svg><use href="#check"/></svg>Alle vier de leefstijldomeinen</span>
         <span class="quote">“${c.quote}”</span>
         <span class="bekijk">Bekijk profiel →</span>
       </a>`).join("");
     geen.style.display = gefilterd.length ? "none" : "block";
     fAantal.textContent = `${gefilterd.length} van ${COACHES.length} coaches`;
-    const filtersActief = q || rol || prov || actieveExpertises.size;
+    const filtersActief = q || rol || prov;
     fReset.style.display = filtersActief ? "inline" : "none";
   }
   [fZoek, fRol, fProv].forEach(el => el.addEventListener("input", render));
   fReset.addEventListener("click", () => {
     fZoek.value = ""; fRol.value = ""; fProv.value = "";
-    actieveExpertises.clear();
-    fExp.querySelectorAll(".fchip").forEach(ch => ch.classList.remove("actief"));
     render();
   });
   render();
