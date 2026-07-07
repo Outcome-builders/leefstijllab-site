@@ -65,11 +65,17 @@
   .filterrij { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
   .filterrij input[type="search"], .filterrij select {
     font-family: var(--font-body); font-size: 14px; color: var(--purple);
-    background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 10px;
+    background-color: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 10px;
     padding: 11px 14px; outline: none;
   }
   .filterrij input[type="search"] { flex: 1 1 200px; min-width: 170px; }
-  .filterrij select { flex: 0 1 auto; cursor: pointer; }
+  .filterrij select {
+    flex: 0 1 auto; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23292738' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px;
+  }
   .filterrij input:focus, .filterrij select:focus { border-color: var(--green); }
   .expertise-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
   .expertise-chips .chiplabel { font-size: 12px; font-weight: 700; color: var(--grijs-700); align-self: center; margin-right: 2px; text-transform: uppercase; letter-spacing: 1px; }
