@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De LeefstijlLab Opleiding | Word LeefstijlLab Coach</title>
+<meta name="description" content="De 6-maanden opleiding van gedragswetenschapper dr. Roel Hermans waarin je leert waarom jouw patiënten of cliënten doen wat ze doen én hoe je hen begeleidt naar blijvende gedragsverandering.">
+<meta property="og:title" content="Krijg grip op leefstijlgedrag | de LeefstijlLab Opleiding">
+<meta property="og:description" content="Word LeefstijlLab Coach: 6 maanden, max. 10 deelnemers, persoonlijke begeleiding door dr. Roel Hermans.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  @font-face { font-family:'Staatliches'; src:url(data:font/woff2;base64,@@STAAT@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDREG@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDMED@@) format('woff2'); font-weight:500; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDSB@@) format('woff2'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDBOLD@@) format('woff2'); font-weight:700; font-style:normal; }
+
+  :root {
+    --creme: #fdfcf1; --creme-100: #fefdf7; --creme-300: #f2f1de; --creme-400: #e8e7cd;
+    --green: #81b6a2; --green-100: #d3f2df; --green-200: #b3d9c5; --green-400: #65937d; --green-500: #517a63;
+    --purple: #292738; --purple-100: #7c7a88; --purple-200: #676574; --purple-300: #3d3b4b;
+    --yellow: #def472; --yellow-100: #f6fdc3; --yellow-400: #cfe261; --yellow-500: #b9c646;
+    --grijs-700: #737d7d; --rood: #db2b30;
+    --font-head: 'Staatliches', Georgia, sans-serif;
+    --font-body: 'Red Hat Display', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--creme); color: var(--purple); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  h2 { font-family: var(--font-head); font-weight: 400; font-size: 34px; line-height: 1.1; margin-bottom: 14px; }
+  h3 { font-family: var(--font-head); font-weight: 400; }
+  .kicker { font-family: var(--font-head); font-size: 15px; letter-spacing: 4px; color: var(--green-400); display: block; margin-bottom: 10px; }
+  p { line-height: 1.65; }
+  .intro { max-width: 680px; margin-bottom: 40px; color: var(--purple-200); }
+  .marker { background: linear-gradient(to top, var(--yellow) 38%, transparent 38%); padding: 0 3px; }
+
+  header { position: sticky; top: 0; z-index: 50; background: rgba(253,252,241,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--creme-400); }
+  header .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1080px; margin: 0 auto; }
+  header .logo { height: 40px; width: auto; display: block; }
+  .btn { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 18px; line-height: 1.3; background: var(--purple); color: var(--creme); border: 1px solid var(--creme-400); cursor: pointer; padding: 16px 24px; border-radius: 8px; text-decoration: none; text-align: center; transition: background-color .3s, color .3s; }
+  .btn:hover { background: var(--green); color: var(--purple); }
+  .btn.klein { padding: 8px 20px; font-size: 16px; }
+  .btn.ghost { background: rgba(41,39,56,.06); border: 1px solid #141322; color: var(--purple); }
+  .btn.ghost:hover { background: var(--green); }
+  .slot .btn { background: var(--yellow); border-color: var(--yellow); color: var(--purple); }
+  .slot .btn:hover { background: var(--green); border-color: var(--green); }
+  .slot .btn.ghost { background: transparent; border: 1px solid var(--creme); color: var(--creme); }
+
+  /* hero */
+  .hero { padding: 76px 0 72px; }
+  .hero .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--font-head); font-weight: 400; font-size: 54px; line-height: 1.05; margin-bottom: 18px; }
+  .hero .sub { font-size: 17.5px; color: var(--purple-200); margin-bottom: 26px; max-width: 560px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+  .domeinen { display: flex; gap: 8px; flex-wrap: wrap; }
+  .domein-chip { font-family: var(--font-head); font-size: 13px; letter-spacing: 2px; background: var(--green-100); border: 1px solid var(--green-200); color: var(--green-500); border-radius: 20px; padding: 6px 14px 5px; }
+  .hero img { width: 100%; border-radius: 18px; display: block; box-shadow: 0 12px 40px rgba(41,39,56,.15); }
+  .feiten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+  .feit { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 14px; padding: 16px 18px; }
+  .feit .groot { font-family: var(--font-head); font-size: 24px; color: var(--green-500); }
+  .feit .lbl { font-size: 12.5px; color: var(--grijs-700); margin-top: 3px; }
+
+  /* casussen */
+  .sectie-wit { background: #fff; border-top: 1px solid var(--creme-400); border-bottom: 1px solid var(--creme-400); }
+  .casussen { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .casus { background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 24px; }
+  .casus .wie { font-family: var(--font-head); font-size: 13px; letter-spacing: 3px; color: var(--green-400); margin-bottom: 10px; }
+  .casus .quote { font-weight: 700; font-size: 16.5px; line-height: 1.45; margin-bottom: 10px; }
+  .casus p { font-size: 14px; color: var(--purple-200); }
+  .casus .watals { margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--green-500); border-top: 1.5px dashed var(--creme-400); padding-top: 12px; }
+
+  /* traditioneel vs modern (donker) */
+  .vs { background: var(--purple); color: var(--creme); }
+  .vs .kicker { color: var(--yellow); }
+  .vs h2 { color: var(--creme); }
+  .vs .intro { color: rgba(253,252,241,.75); }
+  .vs .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .vs .kolom { border-radius: 16px; padding: 26px; }
+  .vs .kolom.oud { background: var(--purple-300); }
+  .vs .kolom.nieuw { background: var(--creme); color: var(--purple); }
+  .vs .kolom h3 { font-size: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .vs .kolom.oud h3 { color: rgba(253,252,241,.85); }
+  .vs ul { list-style: none; }
+  .vs li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.55; margin-bottom: 12px; }
+  .vs .kolom.oud li { color: rgba(253,252,241,.75); }
+  .vs li .x { color: #f3b8ba; font-weight: 700; flex: 0 0 auto; }
+  .vs li .v { color: var(--green-500); font-weight: 700; flex: 0 0 auto; }
+
+  /* graphics */
+  .graphic-kaart { border-radius: 18px; overflow: hidden; line-height: 0; box-shadow: 0 8px 30px rgba(41,39,56,.12); border: 1px solid var(--creme-400); }
+  .graphic-kaart svg { width: 100%; height: auto; display: block; }
+
+  /* traject */
+  .blend { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .blendkaart { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 24px; }
+  .blendkaart h3 { font-size: 19px; letter-spacing: 1px; margin-bottom: 8px; color: var(--green-500); }
+  .blendkaart p { font-size: 14px; color: var(--purple-200); }
+  .maanden { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .maand { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 22px; }
+  .maand .nr { font-family: var(--font-head); font-size: 13px; letter-spacing: 3px; color: var(--green-400); margin-bottom: 8px; }
+  .maand h3 { font-size: 19px; margin-bottom: 8px; }
+  .maand p { font-size: 13.5px; color: var(--purple-200); }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-top: 36px; background: var(--green-100); border: 1px solid var(--green-200); border-radius: 16px; padding: 26px; }
+  .checks div { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.5; }
+  .checks svg { flex: 0 0 auto; width: 19px; height: 19px; margin-top: 2px; }
+
+  /* voor wie */
+  .beroepen { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+  .beroep { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 24px; padding: 10px 20px; font-weight: 700; font-size: 14px; }
+  .oplevert { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .lever { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 22px; }
+  .lever .nr { width: 36px; height: 36px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 17px; padding-top: 2px; margin-bottom: 12px; }
+  .lever h3 { font-size: 18px; margin-bottom: 6px; }
+  .lever p { font-size: 13px; color: var(--purple-200); }
+
+  /* investering */
+  .prijzen { display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; align-items: stretch; }
+  .prijs { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 20px; padding: 30px; position: relative; display: flex; flex-direction: column; }
+  .prijs.top { border: 2.5px solid var(--green); box-shadow: 0 10px 32px rgba(81,122,99,.14); }
+  .prijs .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--purple); color: var(--yellow); font-family: var(--font-head); font-size: 12.5px; letter-spacing: 2px; padding: 5px 16px 4px; border-radius: 20px; white-space: nowrap; }
+  .prijs .naam { font-family: var(--font-head); font-size: 14px; letter-spacing: 3px; color: var(--green-400); }
+  .prijs h3 { font-size: 23px; margin: 2px 0 10px; }
+  .prijs .bedrag { font-family: var(--font-head); font-size: 44px; }
+  .prijs .oud-bedrag { font-size: 17px; color: var(--grijs-700); text-decoration: line-through; margin-left: 8px; }
+  .prijs .toel { font-size: 13.5px; color: var(--purple-200); margin: 8px 0 18px; }
+  .prijs ul { list-style: none; margin-bottom: 22px; flex: 1; }
+  .prijs li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+  .prijs li svg { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 2px; }
+  .prijs .btn { text-align: center; }
+  .termijnen { margin-top: 28px; background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 26px; }
+  .termijnen h3 { font-size: 19px; margin-bottom: 6px; }
+  .termijnen p { font-size: 13.5px; color: var(--purple-200); margin-bottom: 16px; }
+  .termijnen table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .termijnen th { font-family: var(--font-head); font-weight: 400; letter-spacing: 1.5px; font-size: 13px; color: var(--green-500); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--creme-400); }
+  .termijnen td { padding: 9px 10px; border-bottom: 1px solid var(--creme-300); }
+  .termijnen tr:last-child td { border-bottom: none; }
+
+  /* testimonials */
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .quotekaart { background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; }
+  .quotekaart .q { font-family: var(--font-head); font-size: 30px; line-height: 1; color: var(--green); margin-bottom: 8px; }
+  .quotekaart p { font-size: 13.5px; color: var(--purple-300); flex: 1; }
+  .quotekaart .wie { margin-top: 14px; font-weight: 700; font-size: 13.5px; }
+  .quotekaart .rol { font-size: 12px; color: var(--grijs-700); }
+
+  /* roel */
+  .roel { background: var(--green-100); border-top: 1px solid var(--green-200); border-bottom: 1px solid var(--green-200); }
+  .roel .grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+  .roel img { width: 100%; border-radius: 18px; display: block; }
+  .roel p { color: var(--purple-300); margin-bottom: 12px; font-size: 15px; }
+  .roel blockquote { font-family: var(--font-head); font-size: 21px; line-height: 1.3; margin: 18px 0 0; color: var(--purple); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
+  .stat { background: #fff; border: 1.5px solid var(--green-200); border-radius: 14px; padding: 16px; text-align: center; }
+  .stat .cijfer { font-family: var(--font-head); font-size: 27px; color: var(--green-500); }
+  .stat .lbl { font-size: 11.5px; color: var(--grijs-700); margin-top: 3px; line-height: 1.4; }
+
+  /* slot */
+  .slot { background: var(--purple); color: var(--creme); text-align: center; }
+  .slot h2 { color: var(--creme); font-size: 44px; max-width: 640px; margin: 0 auto 14px; }
+  .slot .kicker { color: var(--yellow); }
+  .slot p { color: rgba(253,252,241,.75); max-width: 560px; margin: 0 auto 30px; }
+  .slot .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .slot .stappenlijst { max-width: 480px; margin: 30px auto 0; text-align: left; background: var(--purple-300); border-radius: 16px; padding: 24px 28px; }
+  .slot .stappenlijst div { display: flex; gap: 12px; font-size: 14.5px; line-height: 1.55; margin-bottom: 10px; color: rgba(253,252,241,.85); }
+  .slot .stappenlijst div:last-child { margin-bottom: 0; }
+  .slot .stappenlijst .pijltje { color: var(--yellow); font-weight: 700; }
+
+  footer { padding: 44px 0 36px; text-align: center; }
+  footer .dominos { display: flex; justify-content: center; gap: 6px; margin-bottom: 16px; }
+  footer .dominos svg { width: 24px; height: 24px; }
+  footer .domein { font-family: var(--font-head); font-size: 15px; letter-spacing: 2.5px; }
+  footer .sub { font-size: 12px; color: var(--grijs-700); margin-top: 8px; }
+  footer .sub a { color: var(--green-500); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    section { padding: 52px 0; }
+    .hero { padding: 44px 0 52px; }
+    .hero .grid, .vs .grid, .roel .grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero h1 { font-size: 40px; }
+    h2 { font-size: 29px; }
+    .casussen, .blend, .prijzen { grid-template-columns: 1fr; }
+    .maanden, .quotes { grid-template-columns: 1fr 1fr; }
+    .oplevert { grid-template-columns: 1fr 1fr; }
+    .feiten, .stats { grid-template-columns: 1fr 1fr; }
+    .checks { grid-template-columns: 1fr; }
+    .slot h2 { font-size: 34px; }
+  }
+  @media (max-width: 560px) {
+    .maanden, .quotes, .oplevert { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="domino" viewBox="0 0 551.54 551.54">
+      <path d="M447.21,117.88h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59V124.47c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M361.54,132.52h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59v-242.38c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M321.26,166.21l-28.56-9.52c-3.66-1.46-7.32,0-8.79,4.39l-78.35,229.93c-1.46,3.66,0,7.32,4.39,8.05l28.56,9.52c3.66,1.46,7.32,0,8.79-4.39l78.35-229.93c1.46-3.66,0-7.32-4.39-8.05Z"/>
+      <path d="M253.16,244.56l-22.7-20.5c-2.93-2.2-6.59-2.2-9.52,0L55.45,401.99c-2.2,2.93-2.2,6.59,0,9.52l22.7,20.5c2.93,2.2,6.59,2.2,9.52,0l165.49-177.94c2.2-2.93,2.2-6.59,0-9.52Z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="#81b6a2"/>
+      <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="#fdfcf1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="bar">
+    @@LOGO@@
+    <a class="btn klein" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20opleiding">Plan een kennismakingscall</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kicker">De LeefstijlLab Opleiding · word LeefstijlLab Coach</span>
+        <h1>Krijg grip op <span class="marker">leefstijlgedrag</span></h1>
+        <p class="sub">De 6-maanden opleiding van gedragswetenschapper dr. Roel Hermans waarin je leert waarom jouw patiënten of cliënten doen wat ze doen, én hoe je hen begeleidt naar blijvende gedragsverandering.</p>
+        <div class="ctas">
+          <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20opleiding">Plan een kennismakingscall</a>
+          <a class="btn ghost" href="#investering">Bekijk de investering</a>
+        </div>
+        <div class="domeinen">
+          <span class="domein-chip">Eetgedrag</span>
+          <span class="domein-chip">Beweeggedrag</span>
+          <span class="domein-chip">Slaapgedrag</span>
+          <span class="domein-chip">Drinkgedrag</span>
+        </div>
+      </div>
+      <img src="assets/roel-spreker.jpg" alt="Dr. Roel Hermans als spreker" loading="lazy">
+    </div>
+    <div class="feiten">
+      <div class="feit"><div class="groot">6 maanden</div><div class="lbl">Volledig online · theorie en praktijk geblend</div></div>
+      <div class="feit"><div class="groot">Max. 10</div><div class="lbl">Deelnemers per lichting, voor persoonlijke aandacht</div></div>
+      <div class="feit"><div class="groot">Live begeleiding</div><div class="lbl">Small Group Coaching &amp; Q&amp;A's met dr. Roel Hermans</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASUSSEN ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">Leefstijlverandering in de praktijk</span>
+    <h2>Herken je dit?</h2>
+    <p class="intro">Je wilt je cliënten zo goed mogelijk begeleiden bij leefstijlverandering. Toch blijkt het veranderen én volhouden van nieuw gedrag vaak lastig. Vier situaties die je vast herkent.</p>
+
+    <div class="casussen">
+      <div class="casus">
+        <div class="wie">Casus · Marloes</div>
+        <div class="quote">“Ik weet wát ik moet eten, maar het lukt me niet om het vol te houden.”</div>
+        <p>Marloes is voor de derde keer bij je. Ze kent de adviezen en houdt zich keurig aan haar voedingsschema. Maar zodra het druk of stressvol wordt, neemt het snaaien weer toe. Je voelt dat er meer nodig is dan nóg een plan of schema.</p>
+        <div class="watals">Wat als jij precies wist welke factoren ervoor zorgen dat Marloes telkens terugvalt?</div>
+      </div>
+      <div class="casus">
+        <div class="wie">Casus · David</div>
+        <div class="quote">“Ik wil die oefeningen écht wel doen hoor, maar het schiet er steeds bij in.”</div>
+        <p>David komt langs voor zijn aanhoudende schouderklacht. Je geeft hem oefeningen mee en hij belooft ermee aan de slag te gaan. Bij de volgende afspraak blijkt er weinig veranderd. Waarom is die paar minuten oefenen zo lastig?</p>
+        <div class="watals">Wat als jij therapietrouw net zo systematisch kon analyseren als de klacht zelf?</div>
+      </div>
+      <div class="casus">
+        <div class="wie">Casus · Peter</div>
+        <div class="quote">“Ja, ik wil best wat gezonder leven. Maar het moet wel leuk blijven.”</div>
+        <p>Peter wil een paar kilo afvallen, maar is bang dat hij alles waar hij van geniet moet opgeven. Je wilt hem in actie krijgen, maar merkt dat jouw tips en adviezen vooral leiden tot discussie en weerstand.</p>
+        <div class="watals">Wat als jij precies wist hoe je cliënten helpt om zélf de voordelen van verandering te ontdekken?</div>
+      </div>
+      <div class="casus">
+        <div class="wie">Casus · Lisa</div>
+        <div class="quote">“Een goed gesprek, maar weinig resultaat.”</div>
+        <p>Lisa komt al een tijdje bij je. Jullie voeren goede gesprekken en iedere afspraak lijkt ze opnieuw gemotiveerd. Maar er verandert weinig. Raakt je gesprek wel aan wat haar gedrag daadwerkelijk stuurt?</p>
+        <div class="watals">Wat als jij het verschil wist te maken tussen weten, willen en doen?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRADITIONEEL VS MODERN ================= -->
+<section class="vs">
+  <div class="wrap">
+    <span class="kicker">De nieuwe standaard</span>
+    <h2>Gedragsexpertise: de basis van de moderne professional</h2>
+    <p class="intro">Inhoudelijke kennis over voeding, beweging, slaap en alcohol is belangrijk. Maar uiteindelijk bepaalt gedrag of jouw cliënt in actie komt, volhoudt en resultaat behaalt. Tijd voor een nieuwe standaard in leefstijlbegeleiding.</p>
+
+    <div class="grid">
+      <div class="kolom oud">
+        <h3>De traditionele professional</h3>
+        <ul>
+          <li><span class="x">✕</span>Denkt dat verandering een kwestie is van discipline en motivatie.</li>
+          <li><span class="x">✕</span>Voert gesprekken die informatief zijn, maar niet tot actie leiden.</li>
+          <li><span class="x">✕</span>Laat zich leiden door wat de cliënt ‘zegt’ te willen veranderen.</li>
+          <li><span class="x">✕</span>Mist een duidelijke aanpak voor duurzame gedragsverandering.</li>
+          <li><span class="x">✕</span>Ziet cliënten afhaken zonder te weten waarom.</li>
+        </ul>
+      </div>
+      <div class="kolom nieuw">
+        <h3>De moderne professional</h3>
+        <ul>
+          <li><span class="v">✓</span>Begrijpt waarom leefstijlverandering complexer is dan ‘gewoon doen’.</li>
+          <li><span class="v">✓</span>Voert gesprekken die leiden tot inzicht, eigenaarschap en actie.</li>
+          <li><span class="v">✓</span>Luistert tussen de regels door en werkt met de cliënt aan wat écht nodig is.</li>
+          <li><span class="v">✓</span>Speelt in op de factoren die gedragsverandering belemmeren of versterken.</li>
+          <li><span class="v">✓</span>Helpt cliënten niet alleen starten, maar ook volhouden.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POV ================= -->
+<section>
+  <div class="wrap">
+    <span class="kicker">De LeefstijlLab POV</span>
+    <h2>Persoon × omgeving = verandering</h2>
+    <p class="intro">Leefstijlgedrag ontstaat niet in de persoon alleen. En niet in de omgeving alleen. Maar in hun wisselwerking. Wie alleen naar de persoon kijkt, doet de invloed van de omgeving tekort. Wie alles op de omgeving afschuift, ontneemt mensen hun autonomie. Bij LeefstijlLab werken we daarom vanuit één uitgangspunt.</p>
+    <div class="graphic-kaart">@@POV@@</div>
+  </div>
+</section>
+
+<!-- ================= METHODE ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">De LeefstijlLab methode</span>
+    <h2>Een aanpak met vier dominostenen</h2>
+    <p class="intro">De kern van LeefstijlLab is de gedragsmethode: vier bouwstenen waarop blijvende verandering rust. Cliënten bewegen heen en weer tussen de stenen. Jij leert hoe je hen daarin begeleidt.</p>
+    <div class="graphic-kaart">@@BOUW@@</div>
+  </div>
+</section>
+
+<!-- ================= TRAJECT ================= -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Jouw traject in zes maanden</span>
+    <h2>Hoe werkt de opleiding?</h2>
+    <p class="intro">Volledig online, in een kleine groep van maximaal tien deelnemers, met persoonlijke begeleiding door dr. Roel Hermans. Na een live startbijeenkomst doorloop je in zes maanden zes vaste fasen.</p>
+
+    <div class="blend">
+      <div class="blendkaart">
+        <h3>Theorie</h3>
+        <p>Wetenschappelijke gedragsmodellen, de LeefstijlLab-methode en de vier leefstijldomeinen. Het denkkader waarmee je gedrag leert verkennen, begrijpen, veranderen én behouden.</p>
+      </div>
+      <div class="blendkaart">
+        <h3>Praktijk</h3>
+        <p>Casuïstiek, oefeningen en je eigen cliënt. Vanaf maand 1 vertaal je theorie naar de spreekkamer, zodat je niet “weet” maar dóet, en je portfolio aan het eind een logisch sluitstuk is.</p>
+      </div>
+    </div>
+
+    <div class="maanden">
+      <div class="maand"><div class="nr">Maand 1</div><h3>Het fundament</h3><p>Individu en omgeving, coaching en de LeefstijlLab-methodiek. Je legt het denkkader voor de rest van de opleiding.</p></div>
+      <div class="maand"><div class="nr">Maand 2</div><h3>Eetgedrag</h3><p>Wat, wanneer, waar en met wie. Je leert eetgedrag systematisch verkennen, begrijpen, veranderen en behouden.</p></div>
+      <div class="maand"><div class="nr">Maand 3</div><h3>Beweeggedrag</h3><p>Routines, motivatie en omgeving. Je bouwt een veranderaanpak die past bij het leven van jouw cliënt.</p></div>
+      <div class="maand"><div class="nr">Maand 4</div><h3>Slaapgedrag</h3><p>Slaappatroon en slaaphygiëne. Je krijgt een gedragskundig kader om hier gericht op te begeleiden.</p></div>
+      <div class="maand"><div class="nr">Maand 5</div><h3>Drinkgedrag</h3><p>De rol van sociale situaties, gewoontes en context bij alcoholgebruik. En hoe je cliënten helpt minderen of stoppen.</p></div>
+      <div class="maand"><div class="nr">Maand 6</div><h3>Toetsing &amp; portfolio</h3><p>Je toont aan wat je kunt: toetsing van je gedragsexpertise, afronding van je portfolio en certificering tot LeefstijlLab Coach.</p></div>
+    </div>
+
+    <div class="checks">
+      <div><svg><use href="#check"/></svg>Live startbijeenkomst met dr. Roel Hermans</div>
+      <div><svg><use href="#check"/></svg>Toegang tot alle vier de gedragsmodules</div>
+      <div><svg><use href="#check"/></svg>6× Small Group Coaching (om de paar weken)</div>
+      <div><svg><use href="#check"/></svg>Praktijkopdrachten die je morgen kunt toepassen</div>
+      <div><svg><use href="#check"/></svg>6× Live Q&amp;A-sessies (1× per maand)</div>
+      <div><svg><use href="#check"/></svg>Toetsing en de titel LeefstijlLab Coach</div>
+      <div><svg><use href="#check"/></svg>Online leeromgeving met al je studiemateriaal</div>
+      <div><svg><use href="#check"/></svg>Accreditatie via ADAP, BGN, BLCN &amp; Kwaliteitshuis Fysiotherapie</div>
+      <div><svg><use href="#check"/></svg>Toegang tot de besloten opleidingscommunity</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOOR WIE + OPLEVERT ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">Jouw volgende stap</span>
+    <h2>Voor wie?</h2>
+    <p class="intro">Voor zorg- en leefstijlprofessionals die zich willen onderscheiden in het structureel begeleiden van leefstijlgerichte gedragsverandering. Geschikt voor startende én ervaren professionals.</p>
+    <div class="beroepen">
+      <span class="beroep">Leefstijlcoaches</span>
+      <span class="beroep">Diëtisten</span>
+      <span class="beroep">Fysiotherapeuten</span>
+      <span class="beroep">Personal trainers</span>
+      <span class="beroep">Gewichtsconsulenten</span>
+      <span class="beroep">(Huis)artsen &amp; POH</span>
+      <span class="beroep">Beweegprofessionals</span>
+      <span class="beroep">Trainers &amp; coaches</span>
+    </div>
+
+    <h2>Wat levert het je op?</h2>
+    <p class="intro">Een concrete gedragsmethode, ondersteund met praktische tools die je direct kunt toepassen.</p>
+    <div class="oplevert">
+      <div class="lever"><div class="nr">1</div><h3>Diepgaand inzicht</h3><p>In hoe leefstijlgedrag ontstaat, verandert én behouden wordt. Over alle vier de domeinen.</p></div>
+      <div class="lever"><div class="nr">2</div><h3>Bruikbare tools</h3><p>Methoden, coachkaarten en formats die je morgen al inzet bij je eerste cliënt.</p></div>
+      <div class="lever"><div class="nr">3</div><h3>Erkend certificaat</h3><p>De titel LeefstijlLab Coach en accreditatie. Versterkt je positie in een drukke markt.</p></div>
+      <div class="lever"><div class="nr">4</div><h3>Sterk netwerk</h3><p>Toegang tot een besloten community van gelijkgestemde, gedragsgerichte professionals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVESTERING ================= -->
+<section id="investering">
+  <div class="wrap">
+    <span class="kicker">De investering</span>
+    <h2>Wat kost de opleiding?</h2>
+    <p class="intro">Twee manieren om je aan te sluiten bij LeefstijlLab. Kies je voor de complete opleiding, dan bespaar je in totaal € 497 en krijg je intensieve persoonlijke begeleiding. Alle bedragen zijn excl. btw en zakelijk aftrekbaar.</p>
+
+    <div class="prijzen">
+      <div class="prijs">
+        <div class="naam">Per losse module</div>
+        <h3>Verdiep je per thema</h3>
+        <div><span class="bedrag">€ 749</span></div>
+        <p class="toel">Voor wie zich gericht wil verdiepen in één leefstijldomein. Zelfstandig en in eigen tempo.</p>
+        <ul>
+          <li><svg><use href="#check"/></svg>Toegang tot één module (eetgedrag, beweeggedrag, slaapgedrag of drinkgedrag)</li>
+          <li><svg><use href="#check"/></svg>4 leerblokken volgens de LeefstijlLab-methode</li>
+          <li><svg><use href="#check"/></svg>Praktijkopdrachten, coachkaarten en tools</li>
+          <li><svg><use href="#check"/></svg>Online leeromgeving</li>
+          <li><svg><use href="#check"/></svg>Certificaat van deelname &amp; accreditatie</li>
+        </ul>
+        <a class="btn ghost" href="../modules/" style="text-align:center">Bekijk de modules</a>
+      </div>
+
+      <div class="prijs top">
+        <div class="badge">Meest gekozen</div>
+        <div class="naam">Complete opleiding</div>
+        <h3>Word LeefstijlLab Coach</h3>
+        <div><span class="bedrag">€ 2.499</span><span class="oud-bedrag">€ 2.996</span></div>
+        <p class="toel">Het complete traject. Alle vier de modules, persoonlijke begeleiding en certificering.</p>
+        <ul>
+          <li><svg><use href="#check"/></svg>Volledige toegang tot alle vier de modules</li>
+          <li><svg><use href="#check"/></svg>Live begeleiding in een kleine groep door dr. Roel Hermans</li>
+          <li><svg><use href="#check"/></svg>6× Small Group Coaching en 6× Live Q&amp;A-sessies</li>
+          <li><svg><use href="#check"/></svg>Toetsing, portfolio &amp; titel LeefstijlLab Coach</li>
+          <li><svg><use href="#check"/></svg>Accreditatie via ADAP, BGN, BLCN &amp; Kwaliteitshuis Fysiotherapie</li>
+          <li><svg><use href="#check"/></svg>Toegang tot de besloten opleidingscommunity</li>
+        </ul>
+        <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20opleiding" style="text-align:center">Plan een kennismakingscall</a>
+      </div>
+    </div>
+
+    <div class="termijnen">
+      <h3>Liever in termijnen?</h3>
+      <p>De complete opleiding kun je in maximaal vier termijnen voldoen. Per termijn een kleine toeslag. Alle termijnen worden vóór de start van de opleiding voldaan.</p>
+      <table>
+        <tr><th>Betaaloptie</th><th>Bedrag per termijn</th><th>Totaal (excl. btw)</th></tr>
+        <tr><td>Eenmalig</td><td>€ 2.499,—</td><td>€ 2.499,—</td></tr>
+        <tr><td>2 termijnen</td><td>€ 1.274,50</td><td>€ 2.549,—</td></tr>
+        <tr><td>3 termijnen</td><td>€ 858,—</td><td>€ 2.574,—</td></tr>
+        <tr><td>4 termijnen</td><td>€ 649,75</td><td>€ 2.599,—</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">Wat eerdere deelnemers zeggen</span>
+    <h2>Leren. Groeien. Inspireren.</h2>
+    <p class="intro">Iedere leefstijlprofessional heeft een eigen reden om zich aan te sluiten bij LeefstijlLab.</p>
+
+    <div class="quotes">
+      <div class="quotekaart"><div class="q">“</div><p>Als fysio ben ik opgeleid om te kijken naar het lijf. Vanuit een ander perspectief naar mijn patiënten kijken, écht luisteren naar de hulpvraag en daar mijn begeleiding op aanpassen. Dat was voor mij wel een eye-opener.</p><div class="wie">Nina Radmilovic</div><div class="rol">Eigenaar &amp; fysiotherapeut, Arnhem West Fysio</div></div>
+      <div class="quotekaart"><div class="q">“</div><p>De structuur van het begrijpen en veranderen van gedrag die in de opleiding wordt aangeboden, geeft mij als coach houvast bij het werken aan gedragsverandering.</p><div class="wie">Michel Augustinus</div><div class="rol">Eigenaar Balance Lifestylecoaching</div></div>
+      <div class="quotekaart"><div class="q">“</div><p>Roel heeft een berg aan kennis die hij makkelijk verpakt tot iets wat voor iedereen begrijpelijk is, van professional tot iemand die worstelt met zijn gezondheid. Dat vind ik eigenlijk best wel uniek.</p><div class="wie">Ricky Frissen</div><div class="rol">Eigenaar &amp; diëtist, Chaynge</div></div>
+      <div class="quotekaart"><div class="q">“</div><p>Ik heb nu meer structuur in mijn begeleiding om mijn cliënten van de huidige naar de gewenste situatie te begeleiden. Gedragsverandering die echt werkt! Roel geeft bovendien fijne, persoonlijke begeleiding.</p><div class="wie">Annemarie Somers-Kursten</div><div class="rol">Eigenaar Good Mood Lifestyle</div></div>
+      <div class="quotekaart"><div class="q">“</div><p>Ik heb heel veel inzichten opgedaan en duidelijke bouwstenen gekregen die ik bij eerdere opleidingen nog niet heb opgedaan. De LeefstijlLab-methode geeft me meer houvast om mensen daadwerkelijk goed te helpen.</p><div class="wie">Ingeborg van Dijk</div><div class="rol">Arts &amp; Chief Medical Officer, FemmeUp</div></div>
+      <div class="quotekaart"><div class="q">“</div><p>Het verkennen, begrijpen, veranderen en behouden van gedrag gaat fysiotherapeuten in het werkveld veel nieuwe inzichten bieden.</p><div class="wie">Lorenzo d’Hont</div><div class="rol">Fysiotherapeut</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROEL ================= -->
+<section class="roel">
+  <div class="wrap">
+    <div class="grid">
+      <img src="assets/roel-boek.jpg" alt="Dr. Roel Hermans" loading="lazy">
+      <div>
+        <span class="kicker">Over LeefstijlLab</span>
+        <h2>Waar wetenschap de praktijk ontmoet</h2>
+        <p>Roel is gedragswetenschapper en oprichter van LeefstijlLab. Al sinds zijn jeugd is hij gefascineerd door één simpele vraag: waarom doen mensen wat ze doen? Die nieuwsgierigheid leidde tot een doctorstitel en een loopbaan als onderzoeker en docent aan de Radboud Universiteit en Universiteit Maastricht.</p>
+        <p>De drive om Nederland écht gezonder te maken bracht hem naar het Voedingscentrum en het hoofdkantoor van Jumbo Supermarkten, waar hij wetenschap vertaalde naar campagnes, apps en lesmaterialen. In 2020 richtte hij LeefstijlLab op.</p>
+        <blockquote>“Ik help leefstijlprofessionals het gedrag van hun cliënten begrijpen en begeleiden. Op een manier die wetenschappelijk klopt én werkt in de praktijk.”</blockquote>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="cijfer">2013</div><div class="lbl">Gepromoveerd, Radboud Universiteit</div></div>
+      <div class="stat"><div class="cijfer">2020</div><div class="lbl">Oprichting LeefstijlLab</div></div>
+      <div class="stat"><div class="cijfer">47</div><div class="lbl">Wetenschappelijke publicaties</div></div>
+      <div class="stat"><div class="cijfer">100+</div><div class="lbl">Professionals opgeleid</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLOT ================= -->
+<section class="slot">
+  <div class="wrap">
+    <span class="kicker">Klaar om te starten?</span>
+    <h2>Leefstijl is gedrag.</h2>
+    <p>Word de moderne leefstijlprofessional die het verschil maakt. Niet morgen, niet ooit, maar in jouw eerstvolgende cliëntgesprek. Een vrijblijvende kennismakingscall van 30 minuten met Roel is de beste eerste stap.</p>
+    <div class="ctas">
+      <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20opleiding">Plan je kennismakingscall</a>
+      <a class="btn ghost" href="https://www.leefstijllab.nl/opleiding">Bekijk leefstijllab.nl/opleiding</a>
+    </div>
+    <div class="stappenlijst">
+      <div><span class="pijltje">▸</span>Stuur een e-mail naar info@leefstijllab.nl met onderwerp “Aanmelden opleiding”, of vul het formulier in op leefstijllab.nl</div>
+      <div><span class="pijltje">▸</span>Binnen drie werkdagen plant Roel persoonlijk de call met je in</div>
+      <div><span class="pijltje">▸</span>Liever eerst proeven? Start met een losse module, bij doorstroom worden de modulekosten verrekend</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="dominos">
+    <svg fill="#81b6a2"><use href="#domino"/></svg>
+    <svg fill="#def472"><use href="#domino"/></svg>
+    <svg fill="#292738"><use href="#domino"/></svg>
+  </div>
+  <div class="domein">leefstijllab.nl</div>
+  <p class="sub"><a href="https://www.leefstijllab.nl">LeefstijlLab</a> · info@leefstijllab.nl · © 2026</p>
+</footer>
+
+</body>
+</html>

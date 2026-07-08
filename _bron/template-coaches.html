@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeefstijlLab Coaches | Vind een gecertificeerde coach bij jou in de buurt</title>
+<meta name="description" content="Alle LeefstijlLab Coaches rondden de opleiding leefstijlgerichte gedragsverandering succesvol af. Vind een coach op achtergrond, expertise of regio.">
+<meta property="og:title" content="LeefstijlLab Coaches">
+<meta property="og:description" content="Gecertificeerde leefstijlprofessionals, opgeleid in de LeefstijlLab methode. Vind een coach die bij jou past.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../landingspagina/assets/favicon.ico">
+<style>
+  @font-face { font-family:'Staatliches'; src:url(data:font/woff2;base64,@@STAAT@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDREG@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDMED@@) format('woff2'); font-weight:500; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDSB@@) format('woff2'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDBOLD@@) format('woff2'); font-weight:700; font-style:normal; }
+
+  :root {
+    --creme: #fdfcf1; --creme-100: #fefdf7; --creme-300: #f2f1de; --creme-400: #e8e7cd;
+    --green: #81b6a2; --green-100: #d3f2df; --green-200: #b3d9c5; --green-400: #65937d; --green-500: #517a63;
+    --purple: #292738; --purple-100: #7c7a88; --purple-200: #676574; --purple-300: #3d3b4b;
+    --yellow: #def472; --yellow-100: #f6fdc3; --yellow-400: #cfe261; --yellow-500: #b9c646;
+    --grijs-700: #737d7d;
+    --font-head: 'Staatliches', Georgia, sans-serif;
+    --font-body: 'Red Hat Display', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--creme); color: var(--purple); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  h2 { font-family: var(--font-head); font-weight: 400; font-size: 34px; line-height: 1.1; margin-bottom: 14px; }
+  h3 { font-family: var(--font-head); font-weight: 400; }
+  .kicker { font-family: var(--font-head); font-size: 15px; letter-spacing: 4px; color: var(--green-400); display: block; margin-bottom: 10px; }
+  p { line-height: 1.65; }
+  .intro { max-width: 680px; color: var(--purple-200); }
+  .marker { background: linear-gradient(to top, var(--yellow) 38%, transparent 38%); padding: 0 3px; }
+
+  header { position: sticky; top: 0; z-index: 50; background: rgba(253,252,241,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--creme-400); }
+  header .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1080px; margin: 0 auto; }
+  header .logo { height: 40px; width: auto; display: block; }
+  .btn { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 18px; line-height: 1.3; background: var(--purple); color: var(--creme); border: 1px solid var(--creme-400); cursor: pointer; padding: 16px 24px; border-radius: 8px; text-decoration: none; text-align: center; transition: background-color .3s, color .3s; }
+  .btn:hover { background: var(--green); color: var(--purple); }
+  .btn.klein { padding: 8px 20px; font-size: 16px; }
+  .slot .btn { background: var(--yellow); border-color: var(--yellow); color: var(--purple); }
+  .slot .btn:hover { background: var(--green); border-color: var(--green); }
+  .slot .btn.ghost { background: transparent; border: 2px solid var(--creme); color: var(--creme); }
+
+  /* hero */
+  .hero { padding: 70px 0 48px; text-align: center; }
+  .hero h1 { font-family: var(--font-head); font-weight: 400; font-size: 52px; line-height: 1.05; margin: 0 auto 18px; max-width: 780px; }
+  .hero .sub { font-size: 17px; color: var(--purple-200); margin: 0 auto 26px; max-width: 640px; }
+  .proof { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .proof .p-item {
+    display: flex; align-items: center; gap: 9px; background: #fff; border: 1.5px solid var(--creme-400);
+    border-radius: 30px; padding: 9px 18px; font-size: 13.5px; font-weight: 600;
+  }
+  .proof .p-item svg { width: 17px; height: 17px; flex: 0 0 auto; }
+
+  /* filters */
+  .filterbalk {
+    background: #fff; border: 1.5px solid var(--creme-400); border-radius: 18px;
+    padding: 20px 22px; margin-bottom: 30px; box-shadow: 0 2px 12px rgba(41,39,56,.05);
+  }
+  .filterrij { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .filterrij input[type="search"], .filterrij select {
+    font-family: var(--font-body); font-size: 14px; color: var(--purple);
+    background-color: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 10px;
+    padding: 11px 14px; outline: none;
+  }
+  .filterrij input[type="search"] { flex: 1 1 200px; min-width: 170px; }
+  .filterrij select {
+    flex: 0 1 auto; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23292738' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px;
+  }
+  .filterrij input:focus, .filterrij select:focus { border-color: var(--green); }
+  .expertise-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .expertise-chips .chiplabel { font-size: 12px; font-weight: 700; color: var(--grijs-700); align-self: center; margin-right: 2px; text-transform: uppercase; letter-spacing: 1px; }
+  .fchip {
+    font-family: var(--font-head); font-size: 13px; letter-spacing: 1.5px; cursor: pointer;
+    background: var(--creme-100); border: 1.5px solid var(--creme-400); color: var(--purple-200);
+    border-radius: 20px; padding: 7px 16px 6px; transition: all .15s ease;
+  }
+  .fchip.actief { background: var(--green-100); border-color: var(--green); color: var(--green-500); }
+  .resultaat-info { font-size: 13px; color: var(--grijs-700); margin-bottom: 18px; }
+  .resultaat-info button { background: none; border: none; color: var(--green-500); font-weight: 700; cursor: pointer; font-size: 13px; font-family: var(--font-body); }
+
+  /* coach-kaarten */
+  .coachgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .coachkaart {
+    background: #fff; border: 1.5px solid var(--creme-400); border-radius: 18px; padding: 26px 24px 22px;
+    text-decoration: none; color: var(--purple); display: flex; flex-direction: column; align-items: center;
+    text-align: center; transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .coachkaart:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(41,39,56,.12); }
+  .avatar { width: 88px; height: 88px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head); font-size: 30px; color: var(--creme); margin-bottom: 14px; position: relative; }
+  .avatar .cert {
+    position: absolute; right: -4px; bottom: -4px; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--yellow); border: 2.5px solid #fff; display: flex; align-items: center; justify-content: center;
+  }
+  .avatar .cert svg { width: 15px; height: 15px; fill: var(--purple); }
+  .coachkaart .naam { font-family: var(--font-head); font-size: 21px; letter-spacing: .5px; }
+  .coachkaart .rol { font-size: 13.5px; font-weight: 600; color: var(--green-500); margin-top: 2px; }
+  .coachkaart .plaats { font-size: 12.5px; color: var(--grijs-700); margin-top: 3px; }
+  .coachkaart .domeinregel { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; font-size: 12px; font-weight: 700; color: var(--green-500); }
+  .coachkaart .domeinregel svg { width: 15px; height: 15px; flex: 0 0 auto; }
+  .coachkaart .quote { font-size: 12.5px; color: var(--purple-200); font-style: italic; margin-top: 13px; line-height: 1.5; }
+  .coachkaart .bekijk { margin-top: auto; padding-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--green-500); }
+  .geen { display: none; text-align: center; padding: 50px 20px; color: var(--grijs-700); background: var(--creme-100); border: 1.5px dashed var(--creme-400); border-radius: 18px; }
+
+  /* waarom-sectie */
+  .sectie-wit { background: #fff; border-top: 1px solid var(--creme-400); border-bottom: 1px solid var(--creme-400); }
+  .waarom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+  .waaromkaart { background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 24px; }
+  .waaromkaart .nr { width: 38px; height: 38px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 18px; padding-top: 2px; margin-bottom: 14px; }
+  .waaromkaart h3 { font-size: 19px; margin-bottom: 8px; }
+  .waaromkaart p { font-size: 13.5px; color: var(--purple-200); }
+
+  /* slot */
+  .slot { background: var(--purple); color: var(--creme); text-align: center; }
+  .slot h2 { color: var(--creme); font-size: 40px; max-width: 640px; margin: 0 auto 14px; }
+  .slot .kicker { color: var(--yellow); }
+  .slot p { color: rgba(253,252,241,.75); max-width: 560px; margin: 0 auto 30px; }
+  .slot .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  footer { padding: 44px 0 36px; text-align: center; }
+  footer .dominos { display: flex; justify-content: center; gap: 6px; margin-bottom: 16px; }
+  footer .dominos svg { width: 24px; height: 24px; }
+  footer .domein { font-family: var(--font-head); font-size: 15px; letter-spacing: 2.5px; }
+  footer .sub { font-size: 12px; color: var(--grijs-700); margin-top: 8px; }
+  footer .sub a { color: var(--green-500); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 38px; }
+    h2 { font-size: 29px; }
+    .coachgrid { grid-template-columns: 1fr 1fr; }
+    .waarom { grid-template-columns: 1fr; }
+    .slot h2 { font-size: 32px; }
+  }
+  @media (max-width: 580px) { .coachgrid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="domino" viewBox="0 0 551.54 551.54">
+      <path d="M447.21,117.88h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59V124.47c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M361.54,132.52h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59v-242.38c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M321.26,166.21l-28.56-9.52c-3.66-1.46-7.32,0-8.79,4.39l-78.35,229.93c-1.46,3.66,0,7.32,4.39,8.05l28.56,9.52c3.66,1.46,7.32,0,8.79-4.39l78.35-229.93c1.46-3.66,0-7.32-4.39-8.05Z"/>
+      <path d="M253.16,244.56l-22.7-20.5c-2.93-2.2-6.59-2.2-9.52,0L55.45,401.99c-2.2,2.93-2.2,6.59,0,9.52l22.7,20.5c2.93,2.2,6.59,2.2,9.52,0l165.49-177.94c2.2-2.93,2.2-6.59,0-9.52Z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="#81b6a2"/>
+      <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="#fdfcf1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="bar">
+    @@LOGO@@
+    <a class="btn klein" href="../opleiding/">Word ook LeefstijlLab Coach</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Het LeefstijlLab netwerk</span>
+    <h1>Vind jouw <span class="marker">LeefstijlLab Coach</span></h1>
+    <p class="sub">Elke coach in dit netwerk rondde de LeefstijlLab opleiding succesvol af en draagt de titel LeefstijlLab Coach. Verschillende achtergronden, één wetenschappelijk onderbouwde methode, en allemaal thuis in alle vier de leefstijldomeinen: eet-, beweeg-, slaap- en drinkgedrag.</p>
+    <div class="proof">
+      <span class="p-item"><svg><use href="#check"/></svg>Gecertificeerd LeefstijlLab Coach</span>
+      <span class="p-item"><svg><use href="#check"/></svg>Opgeleid in de gedragsmethode</span>
+      <span class="p-item"><svg><use href="#check"/></svg>Getoetst op casuïstiek &amp; portfolio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OVERZICHT + FILTERS ================= -->
+<section style="padding-top: 8px;">
+  <div class="wrap">
+    <div class="filterbalk">
+      <div class="filterrij">
+        <input type="search" id="f-zoek" placeholder="Zoek op naam, praktijk of plaats…">
+        <select id="f-rol">
+          <option value="">Alle achtergronden</option>
+        </select>
+        <select id="f-provincie">
+          <option value="">Alle provincies</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="resultaat-info"><span id="f-aantal"></span> <button id="f-reset" style="display:none">Filters wissen</button></div>
+
+    <div class="coachgrid" id="coachgrid"></div>
+    <div class="geen" id="geen">
+      <strong>Geen coaches gevonden met deze filters.</strong><br>
+      Probeer een andere combinatie of wis de filters.
+    </div>
+  </div>
+</section>
+
+<!-- ================= WAAROM EEN LEEFSTIJLLAB COACH ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">Waarom een LeefstijlLab Coach?</span>
+    <h2>Verder dan adviezen: begeleiding die blijft</h2>
+    <p class="intro">Een LeefstijlLab Coach kijkt niet alleen naar wat je doet, maar vooral naar waardoor je het doet. Zo werk je aan verandering die ook zonder coach standhoudt.</p>
+    <div class="waarom">
+      <div class="waaromkaart"><div class="nr">1</div><h3>Eén bewezen methode</h3><p>Elke coach werkt met dezelfde wetenschappelijk onderbouwde aanpak: gedrag verkennen, begrijpen, veranderen en behouden.</p></div>
+      <div class="waaromkaart"><div class="nr">2</div><h3>Getoetst en gecertificeerd</h3><p>De titel LeefstijlLab Coach krijg je niet zomaar. Elke coach is getoetst op gedragsexpertise, casuïstiek en portfolio.</p></div>
+      <div class="waaromkaart"><div class="nr">3</div><h3>De juiste match</h3><p>Van diëtist tot arts en van personal trainer tot leefstijlcoach: vind een coach met de achtergrond en expertise die bij jouw vraag past.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLOT: WORD OOK COACH ================= -->
+<section class="slot">
+  <div class="wrap">
+    <span class="kicker">Voor professionals</span>
+    <h2>Sta jij hier straks ook tussen?</h2>
+    <p>Word LeefstijlLab Coach en sluit je aan bij een groeiend netwerk van gedragsgerichte leefstijlprofessionals. Jouw profiel op deze pagina, cliënten via het netwerk en een titel die je onderscheidt in een drukke markt.</p>
+    <div class="ctas">
+      <a class="btn" href="../opleiding/">Bekijk de opleiding</a>
+      <a class="btn ghost" href="../modules/">Of start met een losse module</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="dominos">
+    <svg fill="#81b6a2"><use href="#domino"/></svg>
+    <svg fill="#def472"><use href="#domino"/></svg>
+    <svg fill="#292738"><use href="#domino"/></svg>
+  </div>
+  <div class="domein">leefstijllab.nl</div>
+  <p class="sub"><a href="https://www.leefstijllab.nl">LeefstijlLab</a> · info@leefstijllab.nl · © 2026 · Profielen zijn voorbeelden ter illustratie</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  const grid = document.getElementById("coachgrid");
+  const geen = document.getElementById("geen");
+  const fZoek = document.getElementById("f-zoek");
+  const fRol = document.getElementById("f-rol");
+  const fProv = document.getElementById("f-provincie");
+  const fAantal = document.getElementById("f-aantal");
+  const fReset = document.getElementById("f-reset");
+
+  function initialen(naam) {
+    return naam.split(" ").filter(w => w[0] === w[0].toUpperCase()).map(w => w[0]).slice(0,2).join("");
+  }
+
+  // filteropties vullen op basis van data
+  [...new Set(COACHES.map(c => c.rol))].sort().forEach(r => fRol.insertAdjacentHTML("beforeend", `<option>${r}</option>`));
+  [...new Set(COACHES.map(c => c.provincie))].sort().forEach(p => fProv.insertAdjacentHTML("beforeend", `<option>${p}</option>`));
+
+  function render() {
+    const q = fZoek.value.trim().toLowerCase();
+    const rol = fRol.value, prov = fProv.value;
+    const gefilterd = COACHES.filter(c => {
+      if (rol && c.rol !== rol) return false;
+      if (prov && c.provincie !== prov) return false;
+      if (q && !(c.naam + " " + c.praktijk + " " + c.plaats).toLowerCase().includes(q)) return false;
+      return true;
+    });
+    grid.innerHTML = gefilterd.map(c => `
+      <a class="coachkaart" href="profiel.html?coach=${c.slug}">
+        <span class="avatar" style="background:${c.kleur}">${initialen(c.naam)}
+          <span class="cert" title="Gecertificeerd LeefstijlLab Coach"><svg><use href="#domino"/></svg></span>
+        </span>
+        <span class="naam">${c.naam}</span>
+        <span class="rol">${c.rol} · ${c.praktijk}</span>
+        <span class="plaats">${c.plaats} (${c.provincie})</span>
+        <span class="domeinregel"><svg><use href="#check"/></svg>Alle vier de leefstijldomeinen</span>
+        <span class="quote">“${c.quote}”</span>
+        <span class="bekijk">Bekijk profiel →</span>
+      </a>`).join("");
+    geen.style.display = gefilterd.length ? "none" : "block";
+    fAantal.textContent = `${gefilterd.length} van ${COACHES.length} coaches`;
+    const filtersActief = q || rol || prov;
+    fReset.style.display = filtersActief ? "inline" : "none";
+  }
+  [fZoek, fRol, fProv].forEach(el => el.addEventListener("input", render));
+  fReset.addEventListener("click", () => {
+    fZoek.value = ""; fRol.value = ""; fProv.value = "";
+    render();
+  });
+  render();
+</script>
+
+</body>
+</html>

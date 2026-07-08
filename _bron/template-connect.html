@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeefstijlLab Connect | Blijf groeien na je opleiding</title>
+<meta name="description" content="Het membership voor LeefstijlLab alumni: maandelijkse masterclasses, intervisie met dr. Roel Hermans en een besloten community van gedragsgerichte professionals.">
+<meta property="og:title" content="LeefstijlLab Connect">
+<meta property="og:description" content="Blijf je doorontwikkelen, krijg feedback van Roel en blijf verbonden met vakgenoten. Exclusief voor LeefstijlLab alumni.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../landingspagina/assets/favicon.ico">
+<style>
+  @font-face { font-family:'Staatliches'; src:url(data:font/woff2;base64,@@STAAT@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDREG@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDMED@@) format('woff2'); font-weight:500; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDSB@@) format('woff2'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDBOLD@@) format('woff2'); font-weight:700; font-style:normal; }
+
+  :root {
+    --creme: #fdfcf1; --creme-100: #fefdf7; --creme-300: #f2f1de; --creme-400: #e8e7cd;
+    --green: #81b6a2; --green-100: #d3f2df; --green-200: #b3d9c5; --green-400: #65937d; --green-500: #517a63;
+    --purple: #292738; --purple-100: #7c7a88; --purple-200: #676574; --purple-300: #3d3b4b;
+    --yellow: #def472; --yellow-100: #f6fdc3; --yellow-400: #cfe261; --yellow-500: #b9c646;
+    --grijs-700: #737d7d;
+    --font-head: 'Staatliches', Georgia, sans-serif;
+    --font-body: 'Red Hat Display', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--creme); color: var(--purple); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 68px 0; }
+  h2 { font-family: var(--font-head); font-weight: 400; font-size: 34px; line-height: 1.1; margin-bottom: 14px; }
+  h3 { font-family: var(--font-head); font-weight: 400; }
+  .kicker { font-family: var(--font-head); font-size: 15px; letter-spacing: 4px; color: var(--green-400); display: block; margin-bottom: 10px; }
+  p { line-height: 1.65; }
+  .intro { max-width: 680px; margin-bottom: 40px; color: var(--purple-200); }
+  .marker { background: linear-gradient(to top, var(--yellow) 38%, transparent 38%); padding: 0 3px; }
+
+  header { position: sticky; top: 0; z-index: 50; background: rgba(253,252,241,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--creme-400); }
+  header .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1080px; margin: 0 auto; }
+  header .logo { height: 40px; width: auto; display: block; }
+  .btn { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 18px; line-height: 1.3; background: var(--purple); color: var(--creme); border: 1px solid var(--creme-400); cursor: pointer; padding: 16px 24px; border-radius: 8px; text-decoration: none; text-align: center; transition: background-color .3s, color .3s; }
+  .btn:hover { background: var(--green); color: var(--purple); }
+  .btn.klein { padding: 8px 20px; font-size: 16px; }
+  .btn.ghost { background: rgba(41,39,56,.06); border: 1px solid #141322; color: var(--purple); }
+  .btn.ghost:hover { background: var(--green); }
+  .slot .btn { background: var(--yellow); border-color: var(--yellow); color: var(--purple); }
+  .slot .btn:hover { background: var(--green); border-color: var(--green); }
+  .slot .btn.ghost { background: transparent; border: 1px solid var(--creme); color: var(--creme); }
+
+  /* hero */
+  .hero { padding: 76px 0 60px; text-align: center; }
+  .hero .connectlogo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .hero .connectlogo svg { width: 34px; height: 34px; }
+  .hero .connectlogo span { font-family: var(--font-head); font-size: 22px; letter-spacing: 3px; }
+  .hero .connectlogo em { font-style: normal; color: var(--green-500); }
+  .hero h1 { font-family: var(--font-head); font-weight: 400; font-size: 52px; line-height: 1.05; margin: 0 auto 18px; max-width: 800px; }
+  .hero .sub { font-size: 17.5px; color: var(--purple-200); margin: 0 auto 28px; max-width: 660px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 26px; }
+  .proof { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .proof .p-item { display: flex; align-items: center; gap: 9px; background: #fff; border: 1.5px solid var(--creme-400); border-radius: 30px; padding: 9px 18px; font-size: 13.5px; font-weight: 600; }
+  .proof .p-item svg { width: 17px; height: 17px; flex: 0 0 auto; }
+
+  .sectie-wit { background: #fff; border-top: 1px solid var(--creme-400); border-bottom: 1px solid var(--creme-400); }
+
+  /* pijlers */
+  .pijlers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pijler { background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 18px; padding: 28px 26px; }
+  .pijler .nr { width: 42px; height: 42px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 19px; padding-top: 2px; margin-bottom: 16px; }
+  .pijler h3 { font-size: 21px; margin-bottom: 6px; }
+  .pijler .sub-h { font-size: 13px; color: var(--grijs-700); margin-bottom: 16px; }
+  .pijler ul { list-style: none; }
+  .pijler li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; margin-bottom: 11px; color: var(--purple-300); }
+  .pijler li svg { flex: 0 0 auto; width: 17px; height: 17px; margin-top: 2px; }
+
+  /* ritme */
+  .ritme { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .ritmekaart { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 18px; padding: 26px; }
+  .ritmekaart .wanneer { font-family: var(--font-head); font-size: 14px; letter-spacing: 3px; color: var(--green-400); margin-bottom: 12px; }
+  .ritmekaart ul { list-style: none; }
+  .ritmekaart li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; margin-bottom: 11px; color: var(--purple-300); }
+  .ritmekaart li svg { flex: 0 0 auto; width: 17px; height: 17px; margin-top: 2px; }
+
+  /* prijs */
+  .prijsgrid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: stretch; }
+  .prijs { background: #fff; border: 2.5px solid var(--green); border-radius: 20px; padding: 32px; box-shadow: 0 10px 32px rgba(81,122,99,.14); position: relative; }
+  .prijs .badge { position: absolute; top: -14px; left: 32px; background: var(--purple); color: var(--yellow); font-family: var(--font-head); font-size: 12.5px; letter-spacing: 2px; padding: 5px 16px 4px; border-radius: 20px; }
+  .prijs .naam { font-family: var(--font-head); font-size: 14px; letter-spacing: 3px; color: var(--green-400); }
+  .prijs h3 { font-size: 24px; margin: 2px 0 12px; }
+  .prijs .bedrag { font-family: var(--font-head); font-size: 44px; }
+  .prijs .bedrag small { font-family: var(--font-body); font-size: 15px; color: var(--grijs-700); font-weight: 600; }
+  .prijs .jaartoel { font-size: 13px; color: var(--green-500); font-weight: 700; margin: 4px 0 18px; }
+  .opties { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 20px; }
+  .optie { border: 1.5px solid var(--creme-400); border-radius: 14px; padding: 16px 18px; position: relative; }
+  .optie.voordeel { border: 2px solid var(--green); background: var(--green-100); }
+  .o-badge { position: absolute; top: -11px; right: 14px; background: var(--green-500); color: var(--creme); font-family: var(--font-head); font-size: 11px; letter-spacing: 1.5px; padding: 3px 12px 2px; border-radius: 14px; }
+  .o-naam { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--grijs-700); }
+  .optie.voordeel .o-naam { color: var(--green-500); }
+  .o-bedrag { font-family: var(--font-head); font-size: 34px; margin: 4px 0 2px; }
+  .o-bedrag small { font-family: var(--font-body); font-size: 13px; color: var(--grijs-700); font-weight: 600; }
+  .o-sub { font-size: 12px; color: var(--grijs-700); line-height: 1.4; }
+  .prijs ul { list-style: none; margin-bottom: 24px; }
+  .prijs li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+  .prijs li svg { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 2px; }
+  .prijs .btn { width: 100%; }
+  .prijs .micro { font-size: 12px; color: var(--grijs-700); margin-top: 12px; text-align: center; line-height: 1.5; }
+  .naast { display: flex; flex-direction: column; gap: 16px; }
+  .naast .infoblok { flex: 1; }
+  .infoblok { background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 22px 24px; }
+  .infoblok h3 { font-size: 18px; margin-bottom: 6px; }
+  .infoblok p { font-size: 13.5px; color: var(--purple-200); }
+  .infoblok.geel { background: var(--yellow-100); border-color: var(--yellow-400); }
+  .infoblok.addon { background: var(--purple); border-color: var(--purple); color: var(--creme); }
+  .infoblok.addon h3 { color: var(--creme); }
+  .infoblok.addon p { color: rgba(253,252,241,.75); }
+  .addon-kicker { font-family: var(--font-head); font-size: 12px; letter-spacing: 2px; color: var(--yellow); margin-bottom: 8px; }
+  .addon-prijs { font-family: var(--font-head); font-size: 28px; margin-top: 14px; }
+  .addon-prijs span { font-family: var(--font-body); font-size: 13px; color: rgba(253,252,241,.7); font-weight: 600; }
+  .addon-sub { font-size: 12.5px; color: rgba(253,252,241,.7); margin-top: 4px; }
+  .infoblok.geel p { color: var(--purple-300); }
+
+  /* quote */
+  .quoteband { background: var(--green-100); border-top: 1px solid var(--green-200); border-bottom: 1px solid var(--green-200); text-align: center; padding: 52px 0; }
+  .quoteband .q { font-family: var(--font-head); font-size: 26px; line-height: 1.3; max-width: 720px; margin: 0 auto 14px; color: var(--purple); }
+  .quoteband .wie { font-size: 13.5px; font-weight: 700; }
+  .quoteband .rol { font-size: 12px; color: var(--grijs-700); }
+
+  /* faq */
+  .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .vraag { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 22px 24px; }
+  .vraag h3 { font-size: 17px; margin-bottom: 8px; }
+  .vraag p { font-size: 13.5px; color: var(--purple-200); }
+
+  /* slot */
+  .slot { background: var(--purple); color: var(--creme); text-align: center; }
+  .slot h2 { color: var(--creme); font-size: 40px; max-width: 640px; margin: 0 auto 14px; }
+  .slot .kicker { color: var(--yellow); }
+  .slot p { color: rgba(253,252,241,.75); max-width: 560px; margin: 0 auto 30px; }
+  .slot .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  footer { padding: 44px 0 36px; text-align: center; }
+  footer .dominos { display: flex; justify-content: center; gap: 6px; margin-bottom: 16px; }
+  footer .dominos svg { width: 24px; height: 24px; }
+  footer .domein { font-family: var(--font-head); font-size: 15px; letter-spacing: 2.5px; }
+  footer .sub { font-size: 12px; color: var(--grijs-700); margin-top: 8px; }
+  footer .sub a { color: var(--green-500); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    section { padding: 52px 0; }
+    .hero h1 { font-size: 38px; }
+    h2 { font-size: 29px; }
+    .pijlers, .ritme, .prijsgrid, .faq { grid-template-columns: 1fr; }
+    .slot h2 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="domino" viewBox="0 0 551.54 551.54">
+      <path d="M447.21,117.88h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59V124.47c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M361.54,132.52h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59v-242.38c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M321.26,166.21l-28.56-9.52c-3.66-1.46-7.32,0-8.79,4.39l-78.35,229.93c-1.46,3.66,0,7.32,4.39,8.05l28.56,9.52c3.66,1.46,7.32,0,8.79-4.39l78.35-229.93c1.46-3.66,0-7.32-4.39-8.05Z"/>
+      <path d="M253.16,244.56l-22.7-20.5c-2.93-2.2-6.59-2.2-9.52,0L55.45,401.99c-2.2,2.93-2.2,6.59,0,9.52l22.7,20.5c2.93,2.2,6.59,2.2,9.52,0l165.49-177.94c2.2-2.93,2.2-6.59,0-9.52Z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="#81b6a2"/>
+      <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="#fdfcf1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="bar">
+    @@LOGO@@
+    <a class="btn klein" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20LeefstijlLab%20Connect">Word Connect-lid</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="connectlogo"><svg fill="#81b6a2"><use href="#domino"/></svg><span>LEEFSTIJLLAB <em>CONNECT</em></span></div>
+    <h1>Je opleiding is af.<br>Je ontwikkeling <span class="marker">niet</span>.</h1>
+    <p class="sub">Connect is het membership voor iedereen die de LeefstijlLab opleiding of een module afrondde. Blijf je verdiepen in gedragsverandering, krijg feedback van dr. Roel Hermans op jouw casussen en blijf verbonden met vakgenoten die dezelfde taal spreken.</p>
+    <div class="ctas">
+      <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20LeefstijlLab%20Connect">Word Connect-lid</a>
+      <a class="btn ghost" href="#aanbod">Bekijk wat je krijgt</a>
+    </div>
+    <div class="proof">
+      <span class="p-item"><svg><use href="#check"/></svg>Maandelijkse masterclass</span>
+      <span class="p-item"><svg><use href="#check"/></svg>Live intervisie met Roel</span>
+      <span class="p-item"><svg><use href="#check"/></svg>Besloten community</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WAAROM ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">Waarom Connect?</span>
+    <h2>Gedragsexpertise is geen diploma, het is een spier</h2>
+    <p class="intro">De wetenschap ontwikkelt door, jouw cliënten veranderen en elke praktijk loopt tegen nieuwe casussen aan. Wie zijn gedragsbril scherp wil houden, blijft trainen. Connect geeft je daarvoor het ritme, de feedback en de mensen.</p>
+
+    <div class="pijlers" id="aanbod">
+      <div class="pijler">
+        <div class="nr">1</div>
+        <h3>Blijf je doorontwikkelen</h3>
+        <div class="sub-h">Verdieping die je direct toepast</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Elke maand een live masterclass over nieuwe wetenschap, technieken of casuïstiek</li>
+          <li><svg><use href="#check"/></svg>Toegang tot de volledige Connect-bibliotheek: alle masterclasses, tools en coachkaarten terugkijken</li>
+          <li><svg><use href="#check"/></svg>Nieuwe templates en werkvormen zodra ze uit het Lab komen</li>
+          <li><svg><use href="#check"/></svg>Accreditatiepunten voor deelname (i.a.)</li>
+          <li><svg><use href="#check"/></svg>Voorrang en ledenkorting op nieuwe modules en themabijeenkomsten</li>
+        </ul>
+      </div>
+      <div class="pijler">
+        <div class="nr">2</div>
+        <h3>Feedback van Roel</h3>
+        <div class="sub-h">Scherp blijven op je eigen begeleiding</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Maandelijkse live intervisie- en Q&amp;A-sessie met dr. Roel Hermans</li>
+          <li><svg><use href="#check"/></svg>Casus insturen: elke maand behandelt Roel ingezonden praktijkcasussen</li>
+          <li><svg><use href="#check"/></svg>Eerste toegang tot nieuw onderzoek en inzichten, vertaald naar de praktijk</li>
+          <li><svg><use href="#check"/></svg>Liever 1-op-1 sparren? Als lid boek je aanvullend een persoonlijke intervisie met Roel</li>
+        </ul>
+      </div>
+      <div class="pijler">
+        <div class="nr">3</div>
+        <h3>Samen met vakgenoten</h3>
+        <div class="sub-h">Een netwerk dat dezelfde taal spreekt</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Besloten community met alle lichtingen: vragen, casussen en successen delen</li>
+          <li><svg><use href="#check"/></svg>Intervisiegroepen per regio of discipline</li>
+          <li><svg><use href="#check"/></svg>Jaarlijkse fysieke Connect-dag: verdieping én ontmoeting</li>
+          <li><svg><use href="#check"/></svg>Jouw profiel op de LeefstijlLab Coaches-pagina, vindbaar voor cliënten</li>
+          <li><svg><use href="#check"/></svg>Doorverwijzen en samenwerken binnen het netwerk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOUW RITME ================= -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Zo ziet je lidmaatschap eruit</span>
+    <h2>Een vast ritme om scherp te blijven</h2>
+    <p class="intro">Geen losse flodders, maar een terugkerend ritme dat past naast een drukke praktijk. Reken op zo'n twee vaste momenten per maand, plus alles wat je zelf op eigen tempo gebruikt.</p>
+
+    <div class="ritme">
+      <div class="ritmekaart">
+        <div class="wanneer">Elke maand</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Live masterclass (60 min) met opname</li>
+          <li><svg><use href="#check"/></svg>Live intervisie &amp; Q&amp;A met Roel (60 min)</li>
+          <li><svg><use href="#check"/></svg>Casusbespreking uit de praktijk van leden</li>
+        </ul>
+      </div>
+      <div class="ritmekaart">
+        <div class="wanneer">Doorlopend</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Besloten community &amp; intervisiegroepen</li>
+          <li><svg><use href="#check"/></svg>Connect-bibliotheek met alle opnames en tools</li>
+          <li><svg><use href="#check"/></svg>Profiel op de Coaches-pagina + doorverwijzingen</li>
+        </ul>
+      </div>
+      <div class="ritmekaart">
+        <div class="wanneer">Elk jaar</div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Fysieke Connect-dag met alle lichtingen</li>
+          <li><svg><use href="#check"/></svg>Jaarprogramma met de thema's voor het nieuwe jaar</li>
+          <li><svg><use href="#check"/></svg>Overzicht van je accreditatiepunten</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIJS ================= -->
+<section class="sectie-wit">
+  <div class="wrap">
+    <span class="kicker">De investering</span>
+    <h2>Eén lidmaatschap, alles erin</h2>
+    <p class="intro">Connect is er exclusief voor wie de LeefstijlLab opleiding of een module heeft afgerond. Maandelijks opzegbaar, want blijven moet een keuze zijn en geen verplichting.</p>
+
+    <div class="prijsgrid">
+      <div class="prijs">
+        <span class="badge">Exclusief voor alumni</span>
+        <div class="naam">LeefstijlLab Connect</div>
+        <h3>Blijf onderdeel van het Lab</h3>
+        <div class="opties">
+          <div class="optie">
+            <div class="o-naam">Maandelijks</div>
+            <div class="o-bedrag">€ 39<small>/maand</small></div>
+            <div class="o-sub">maandelijks opzegbaar</div>
+          </div>
+          <div class="optie voordeel">
+            <span class="o-badge">Voordeligst</span>
+            <div class="o-naam">Jaarlidmaatschap</div>
+            <div class="o-bedrag">€ 29<small>/maand</small></div>
+            <div class="o-sub">€ 348 per jaar, in één keer · bespaar € 120</div>
+          </div>
+        </div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Maandelijkse masterclass + intervisie met Roel</li>
+          <li><svg><use href="#check"/></svg>Casussen insturen en bespreken</li>
+          <li><svg><use href="#check"/></svg>Volledige Connect-bibliotheek en nieuwe tools</li>
+          <li><svg><use href="#check"/></svg>Besloten community en intervisiegroepen</li>
+          <li><svg><use href="#check"/></svg>Jaarlijkse fysieke Connect-dag</li>
+          <li><svg><use href="#check"/></svg>Profiel op de LeefstijlLab Coaches-pagina</li>
+          <li><svg><use href="#check"/></svg>Ledenkorting op nieuwe modules en events</li>
+        </ul>
+        <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20LeefstijlLab%20Connect">Word Connect-lid</a>
+        <div class="micro">Prijzen excl. btw · zakelijk aftrekbaar als studiekosten</div>
+      </div>
+      <div class="naast">
+        <div class="infoblok geel">
+          <h3>Voor LeefstijlLab Coaches</h3>
+          <p>Rondde je de complete opleiding af? Dan is je eerste jaar Connect inbegrepen bij je certificering. Zo blijft je titel actueel én je profiel zichtbaar op de Coaches-pagina.</p>
+        </div>
+        <div class="infoblok">
+          <h3>Voor module-alumni</h3>
+          <p>Ook met één afgeronde module ben je welkom. Stap je later in de complete opleiding, dan verrekenen we zoals altijd de modulekosten.</p>
+        </div>
+        <div class="infoblok addon">
+          <div class="addon-kicker">Aanvullend · alleen voor leden</div>
+          <h3>1-op-1 intervisie met Roel</h3>
+          <p>Persoonlijke sessie van 60 minuten over jouw casussen, praktijk of positionering. Dit vraagt directe tijd van Roel en valt daarom bewust buiten de bundel.</p>
+          <div class="addon-prijs">€ 249 <span>per sessie</span></div>
+          <div class="addon-sub">Of een kaart van 3 sessies voor € 675 (€ 225 per sessie)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<section class="quoteband">
+  <div class="wrap">
+    <div class="q">"De opleiding gaf mij de methode. Connect zorgt dat ik hem blijf aanscherpen, samen met mensen die net zo naar gedrag kijken als ik."</div>
+    <div class="wie">Voorbeeldquote van een Connect-lid</div>
+    <div class="rol">Ter illustratie voor de presentatie</div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Veelgestelde vragen</span>
+    <h2>Vragen? Antwoorden.</h2>
+    <div class="faq" style="margin-top: 28px;">
+      <div class="vraag"><h3>Wie kan lid worden?</h3><p>Iedereen die de complete LeefstijlLab opleiding of minimaal één module heeft afgerond. Connect bouwt voort op het fundament dat je daar hebt gelegd.</p></div>
+      <div class="vraag"><h3>Hoeveel tijd kost het?</h3><p>Reken op twee live momenten per maand van elk een uur. Alles wordt opgenomen, dus je kunt ook op eigen tempo terugkijken. De community gebruik je zoveel als je zelf wilt.</p></div>
+      <div class="vraag"><h3>Kan ik maandelijks opzeggen?</h3><p>Ja. Het maandlidmaatschap (€ 39 per maand) is maandelijks opzegbaar. Het jaarlidmaatschap betaal je in één keer (€ 348) en kost daarmee € 29 per maand.</p></div>
+      <div class="vraag"><h3>Zit 1-op-1 begeleiding van Roel erbij?</h3><p>De maandelijkse intervisie en casusbesprekingen zijn in groepsverband en zitten volledig in het lidmaatschap. Wil je persoonlijk sparren, dan boek je als lid aanvullend een 1-op-1 sessie met Roel.</p></div>
+      <div class="vraag"><h3>Hoe volg ik de sessies?</h3><p>Alle masterclasses en intervisiesessies zijn live online en worden opgenomen. Kun je er een keer niet bij zijn, dan kijk je terug in de Connect-bibliotheek.</p></div>
+      <div class="vraag"><h3>Tellen de sessies mee voor accreditatie?</h3><p>Voor masterclasses en intervisie wordt accreditatie aangevraagd bij de gebruikelijke instanties (ADAP, BGN, BLCN, Kwaliteitshuis Fysiotherapie). Je jaaroverzicht vind je in je ledenomgeving.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLOT ================= -->
+<section class="slot">
+  <div class="wrap">
+    <span class="kicker">LeefstijlLab Connect</span>
+    <h2>Eens in het Lab, altijd in het Lab</h2>
+    <p>Blijf leren, blijf sparren en blijf onderdeel van een netwerk dat gedragsverandering net zo serieus neemt als jij. Meld je aan en doe volgende maand al mee met de eerste masterclass.</p>
+    <div class="ctas">
+      <a class="btn" href="mailto:info@leefstijllab.nl?subject=Aanmelden%20LeefstijlLab%20Connect">Word Connect-lid</a>
+      <a class="btn ghost" href="../coaches/">Bekijk het Coaches-netwerk</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="dominos">
+    <svg fill="#81b6a2"><use href="#domino"/></svg>
+    <svg fill="#def472"><use href="#domino"/></svg>
+    <svg fill="#292738"><use href="#domino"/></svg>
+  </div>
+  <div class="domein">leefstijllab.nl</div>
+  <p class="sub"><a href="https://www.leefstijllab.nl">LeefstijlLab</a> · info@leefstijllab.nl · © 2026 · Conceptpagina ter presentatie</p>
+</footer>
+
+</body>
+</html>

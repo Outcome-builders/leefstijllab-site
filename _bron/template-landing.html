@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wat als het nu wél lukt? | Het nieuwe boek van Dr. Roel Hermans</title>
+<meta name="description" content="Ontdek de methode achter blijvende leefstijlverandering. Laat je voornaam en e-mailadres achter en ontvang als eerste een gratis preview van het boek.">
+<meta property="og:title" content="Wat als het nu wél lukt?">
+<meta property="og:description" content="Het nieuwe boek van Dr. Roel Hermans over de methode achter blijvende leefstijlverandering. Ontvang een gratis preview.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  @font-face { font-family:'Staatliches'; src:url(data:font/woff2;base64,@@STAAT@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDREG@@) format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDMED@@) format('woff2'); font-weight:500; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDSB@@) format('woff2'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'Red Hat Display'; src:url(data:font/woff2;base64,@@RHDBOLD@@) format('woff2'); font-weight:700; font-style:normal; }
+
+  :root {
+    --creme: #fdfcf1; --creme-100: #fefdf7; --creme-300: #f2f1de; --creme-400: #e8e7cd;
+    --green: #81b6a2; --green-100: #d3f2df; --green-200: #b3d9c5; --green-400: #65937d; --green-500: #517a63;
+    --purple: #292738; --purple-100: #7c7a88; --purple-200: #676574; --purple-300: #3d3b4b;
+    --yellow: #def472; --yellow-100: #f6fdc3; --yellow-400: #cfe261; --yellow-500: #b9c646;
+    --grijs-700: #737d7d;
+    --font-head: 'Staatliches', Georgia, sans-serif;
+    --font-body: 'Red Hat Display', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--creme); color: var(--purple); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  h2 { font-family: var(--font-head); font-weight: 400; font-size: 34px; line-height: 1.1; margin-bottom: 14px; }
+  .kicker { font-family: var(--font-head); font-size: 15px; letter-spacing: 4px; color: var(--green-400); display: block; margin-bottom: 10px; }
+  p { line-height: 1.65; }
+  .marker { background: linear-gradient(to top, var(--yellow) 38%, transparent 38%); padding: 0 3px; }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50; background: rgba(253,252,241,.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--creme-400);
+  }
+  header .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1080px; margin: 0 auto; }
+  header .logo { height: 40px; width: auto; display: block; }
+  .btn {
+    display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 18px; line-height: 1.3;
+    background: var(--purple); color: var(--creme); border: 1px solid var(--creme-400); cursor: pointer;
+    padding: 16px 24px; border-radius: 8px; text-decoration: none; text-align: center;
+    transition: background-color .3s, color .3s;
+  }
+  .btn:hover { background: var(--green); color: var(--purple); }
+  .btn.klein { padding: 8px 20px; font-size: 16px; }
+  .stickybalk .btn { background: var(--yellow); border-color: var(--yellow); color: var(--purple); }
+  .stickybalk .btn:hover { background: var(--green); }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 72px 0 80px; }
+  .hero .grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--font-head); font-weight: 400; font-size: 58px; line-height: 1.05; margin-bottom: 18px; }
+  .hero .sub { font-size: 17.5px; color: var(--purple-200); margin-bottom: 30px; max-width: 520px; }
+
+  .formcard {
+    background: #fff; border: 1.5px solid var(--creme-400); border-radius: 18px;
+    padding: 26px 26px 22px; max-width: 460px; box-shadow: 0 4px 20px rgba(41,39,56,.06);
+  }
+  .formcard .formtitel { font-weight: 700; font-size: 15.5px; margin-bottom: 14px; }
+  .formcard .formtitel .dot { color: var(--green-400); }
+  .veld { margin-bottom: 12px; }
+  .veld input {
+    width: 100%; font-family: var(--font-body); font-size: 15px; color: var(--purple);
+    background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 10px;
+    padding: 13px 16px; outline: none; transition: border-color .15s ease;
+  }
+  .veld input:focus { border-color: var(--green); }
+  .veld input::placeholder { color: var(--purple-100); }
+  form .btn { width: 100%; margin-top: 4px; }
+  .hero-cta { max-width: 440px; }
+  .btn.groot { display: block; width: 100%; padding: 18px 24px; }
+  .micro { font-size: 12px; color: var(--grijs-700); margin-top: 12px; line-height: 1.55; }
+  .succes { display: none; background: var(--green-100); border: 1.5px solid var(--green-200); border-radius: 12px; padding: 18px; font-size: 14.5px; line-height: 1.6; }
+  .succes strong { color: var(--green-500); }
+
+  /* boekmockup */
+  .boekwrap { display: flex; justify-content: center; perspective: 1200px; }
+  .boek {
+    width: 300px; height: 430px; border-radius: 6px 14px 14px 6px; position: relative;
+    background: url(assets/roel-cover.jpg) top center / cover no-repeat, var(--purple);
+    box-shadow: -24px 28px 50px rgba(41,39,56,.32), inset 8px 0 12px rgba(0,0,0,.28);
+    transform: rotateY(-14deg) rotateX(2deg);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 26px 24px 22px 32px; color: var(--creme); overflow: hidden;
+  }
+  .boek::before { content:""; position: absolute; left: 17px; top: 0; bottom: 0; width: 2px; background: rgba(253,252,241,.16); z-index: 2; }
+  .b-rug {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 17px; z-index: 4;
+    display: flex; align-items: center; justify-content: center;
+    writing-mode: vertical-rl; font-family: var(--font-head);
+    font-size: 8.5px; letter-spacing: 2.5px; color: rgba(253,252,241,.6);
+  }
+  .b-onder { position: relative; text-align: center; z-index: 5; }
+  .b-watermerk {
+    position: absolute; left: -25%; top: -12%; width: 150%; height: 104.6%;
+    fill: #def472; opacity: .3; z-index: 1; pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black 58%, transparent 86%);
+    mask-image: linear-gradient(to bottom, black 58%, transparent 86%);
+  }
+  .b-cutout { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; pointer-events: none; }
+  .b-grad {
+    position: absolute; inset: 0; z-index: 3; pointer-events: none;
+    background: linear-gradient(to top, #292738 27%, rgba(41,39,56,.92) 37%, rgba(41,39,56,.28) 58%, rgba(41,39,56,.05) 78%, rgba(41,39,56,0) 100%);
+  }
+  .b-titel { font-family: var(--font-head); font-size: 32px; letter-spacing: .5px; line-height: 1.08; text-shadow: 0 2px 14px rgba(20,19,34,.5); }
+  .b-titel em { font-style: normal; color: var(--yellow); }
+  .b-sub { font-size: 11px; line-height: 1.45; color: rgba(253,252,241,.78); margin-top: 6px; }
+  .b-lijn { width: 44px; border-top: 2px solid var(--yellow); margin: 11px auto 9px; }
+  .b-rol { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-200); }
+  .b-auteur { font-family: var(--font-head); font-size: 16px; letter-spacing: 1.5px; margin-top: 2px; }
+
+  /* ---------- bladerboek (in hero) ---------- */
+  .flip-hero { position: relative; }
+  .flipboek {
+    position: relative; width: min(520px, 92vw); aspect-ratio: 620/436;
+    perspective: 2200px; container-type: inline-size;
+    margin-left: calc(100% - min(520px, 92vw));
+    transform: scale(1.22); transform-origin: 100% 50%;
+    transition: transform .7s cubic-bezier(.4,.1,.2,1);
+  }
+  .flipboek.open { transform: scale(1); }
+  .flip-hero .flipnav {
+    width: min(520px, 92vw); margin-left: calc(100% - min(520px, 92vw));
+    margin-top: 58px; justify-content: center;
+    transform: translateX(20.5%);
+    transition: transform .7s cubic-bezier(.4,.1,.2,1), margin-top .7s cubic-bezier(.4,.1,.2,1);
+  }
+  .flipboek.open + .flipnav { transform: translateX(0); margin-top: 22px; }
+  .basis-rechts { position: absolute; right: 0; top: 0; width: 50%; height: 100%; }
+  .vel {
+    position: absolute; right: 0; top: 0; width: 50%; height: 100%;
+    transform-origin: left center; transform-style: preserve-3d;
+    transition: transform .85s cubic-bezier(.4,.1,.2,1); cursor: pointer;
+  }
+  .vel.om { transform: rotateY(-180deg); }
+  .zijde {
+    position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    background: #fffdf4; border: 1px solid var(--creme-400); overflow: hidden;
+    display: flex; flex-direction: column; padding: 5cqw 4.4cqw 3.6cqw; text-align: left;
+  }
+  .zijde.voor { border-radius: 0 10px 10px 0; box-shadow: inset 12px 0 18px -13px rgba(41,39,56,.4), 4px 6px 22px rgba(41,39,56,.14); }
+  .zijde.achter { transform: rotateY(180deg); border-radius: 10px 0 0 10px; box-shadow: inset -12px 0 18px -13px rgba(41,39,56,.4), -4px 6px 22px rgba(41,39,56,.14); }
+  .basis-rechts .zijde { position: absolute; border-radius: 0 10px 10px 0; box-shadow: inset 12px 0 18px -13px rgba(41,39,56,.4); }
+
+  .zijde.foto {
+    background: url(assets/roel-cover.jpg) top center / cover no-repeat, var(--purple);
+    color: var(--creme); border: none; justify-content: flex-end;
+    padding: 4.2cqw 3.9cqw 3.5cqw 5.2cqw;
+  }
+  .zijde.foto::after {
+    content: ""; position: absolute; left: 2.75cqw; top: 0; bottom: 0; width: 2px;
+    background: rgba(253,252,241,.16); z-index: 4;
+  }
+  .zijde.foto .b-titel { font-size: 5.2cqw; }
+  .zijde.foto .b-sub { font-size: 1.77cqw; }
+  .zijde.foto .b-lijn { width: 7cqw; margin: 1.8cqw auto 1.5cqw; }
+  .zijde.foto .b-rol { font-size: 1.45cqw; letter-spacing: .32cqw; }
+  .zijde.foto .b-auteur { font-size: 2.6cqw; }
+  .zijde.foto .b-rug { width: 2.75cqw; font-size: 1.37cqw; letter-spacing: .4cqw; }
+  .zijde.foto .c-hint { position: absolute; top: 2.6cqw; right: 3cqw; font-size: 1.5cqw; color: rgba(253,252,241,.6); z-index: 5; }
+
+  .p-kick { font-family: var(--font-head); font-size: 1.9cqw; letter-spacing: .45cqw; color: var(--green-400); margin-bottom: 1.4cqw; }
+  .p-titel { font-family: var(--font-head); font-size: 3.3cqw; line-height: 1.12; margin-bottom: 2cqw; }
+  .p-tekst { font-size: 1.88cqw; line-height: 1.68; color: var(--purple-300); }
+  .p-tekst p { margin-bottom: 1.8cqw; line-height: 1.68; }
+  .p-tekst em { color: var(--green-500); font-style: italic; }
+  .p-lijst { list-style: none; margin-top: .6cqw; }
+  .p-lijst li { display: flex; gap: 1.4cqw; align-items: flex-start; font-size: 1.88cqw; line-height: 1.6; margin-bottom: 1.5cqw; color: var(--purple-300); }
+  .p-lijst li svg { flex: 0 0 auto; width: 2.4cqw; height: 2.4cqw; margin-top: .35cqw; }
+  .p-stenen { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8cqw; margin-top: 1cqw; }
+  .p-steen { border: 1px solid var(--creme-400); background: var(--creme-100); border-radius: 1.4cqw; padding: 1.8cqw; }
+  .p-steen .nr { font-family: var(--font-head); font-size: 1.7cqw; color: var(--green-400); letter-spacing: .3cqw; }
+  .p-steen .naam { font-family: var(--font-head); font-size: 2.4cqw; margin: .3cqw 0 .5cqw; }
+  .p-steen p { font-size: 1.55cqw; line-height: 1.5; color: var(--purple-200); }
+  .p-nr { margin-top: auto; padding-top: 1.6cqw; font-size: 1.55cqw; color: var(--grijs-700); }
+  .p-nr.rechts { text-align: right; }
+
+  .p-vervaagd { filter: blur(.55cqw); user-select: none; pointer-events: none; }
+  .p-slot { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.8cqw; padding: 4cqw; text-align: center; background: linear-gradient(to bottom, rgba(255,253,244,.2), rgba(255,253,244,.92) 55%); }
+  .p-slot .slot-titel { font-family: var(--font-head); font-size: 2.9cqw; }
+  .p-slot p { font-size: 1.8cqw; color: var(--purple-200); max-width: 88%; }
+  .p-slot .btn { font-size: 1.9cqw; padding: 1.8cqw 3.4cqw; border-radius: 1.8cqw; }
+
+  .flipnav { display: flex; align-items: center; gap: 14px; }
+  .fn {
+    width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
+    background: var(--purple); color: var(--creme); font-size: 19px; line-height: 1;
+    transition: opacity .2s ease, transform .15s ease;
+  }
+  .fn:hover { transform: translateY(-2px); }
+  .fn:disabled { opacity: .25; cursor: default; transform: none; }
+  .fliphint { font-size: 12.5px; color: var(--grijs-700); }
+
+  /* ---------- herken je dit ---------- */
+  .sectie-wit { background: #fff; border-top: 1px solid var(--creme-400); border-bottom: 1px solid var(--creme-400); }
+  .herken-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+  .herken .intro { margin-bottom: 16px; color: var(--purple-200); }
+  .cyclus-wiel { display: flex; justify-content: center; margin: 0; }
+  .cyclus-wiel svg { width: 100%; max-width: 580px; height: auto; display: block; }
+  .cyclus { display: none; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .cyclus .chip {
+    background: var(--creme-100); border: 1.5px solid var(--creme-400); border-radius: 30px;
+    padding: 11px 20px; font-weight: 700; font-size: 14px; white-space: nowrap;
+  }
+  .cyclus .c-pijl { color: var(--green-400); font-size: 18px; font-weight: 700; }
+  .cyclus .chip.rood { background: var(--yellow-100); border-color: var(--yellow-400); }
+
+  .herken .uitleg strong { color: var(--green-500); }
+
+  /* ---------- nieuwe kijk (donker) ---------- */
+  .kijk { background: var(--purple); color: var(--creme); }
+  .kijk .intro { max-width: 700px; margin-bottom: 36px; }
+  .kijk .kicker { color: var(--yellow); }
+  .kijk h2 { color: var(--creme); }
+  .kijk p { color: rgba(253,252,241,.78); margin-bottom: 14px; }
+  .ijsberg-kaart { border-radius: 18px; overflow: hidden; line-height: 0; box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+  .ijsberg-kaart svg { width: 100%; height: auto; display: block; }
+
+  /* ---------- methode ---------- */
+  .methode .intro { max-width: 640px; margin-bottom: 40px; }
+  .stappen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stapkaart {
+    background: #fff; border: 1.5px solid var(--creme-400); border-radius: 16px; padding: 24px 22px;
+    display: flex; flex-direction: column;
+  }
+  .stapkaart .nr {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head); font-size: 18px; color: var(--purple); margin-bottom: 14px; padding-top: 2px;
+  }
+  .stapkaart h3 { font-family: var(--font-head); font-weight: 400; font-size: 21px; margin-bottom: 8px; }
+  .stapkaart p { font-size: 13.5px; color: var(--purple-200); line-height: 1.6; }
+  .stapkaart .levert { margin-top: auto; padding-top: 14px; font-size: 12px; font-weight: 700; color: var(--green-500); }
+
+  /* ---------- stel je voor ---------- */
+  .voorstel { background: var(--green-100); border-top: 1px solid var(--green-200); border-bottom: 1px solid var(--green-200); }
+  .voorstel .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+  .voorstel ul { list-style: none; }
+  .voorstel li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; font-size: 15.5px; line-height: 1.55; }
+  .voorstel li svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 2px; }
+  .voorstel .cta-blok { margin-top: 26px; }
+
+  /* ---------- auteur ---------- */
+  .auteur .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .auteur img { width: 100%; border-radius: 18px; display: block; }
+  .auteur p { color: var(--purple-200); margin-bottom: 14px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+  .stat { background: #fff; border: 1.5px solid var(--creme-400); border-radius: 14px; padding: 18px; text-align: center; }
+  .stat .cijfer { font-family: var(--font-head); font-size: 30px; color: var(--green-500); }
+  .stat .lbl { font-size: 12px; color: var(--grijs-700); margin-top: 4px; line-height: 1.45; }
+
+  /* ---------- slot-cta ---------- */
+  .slot { background: var(--purple); color: var(--creme); text-align: center; }
+  .slot h2 { color: var(--creme); max-width: 620px; margin: 0 auto 14px; }
+  .slot .kicker { color: var(--yellow); }
+  .slot p { color: rgba(253,252,241,.75); max-width: 540px; margin: 0 auto 30px; }
+  .slot .formcard { margin: 0 auto; text-align: left; }
+
+  /* ---------- footer ---------- */
+  footer { padding: 44px 0 130px; text-align: center; }
+  footer .dominos { display: flex; justify-content: center; gap: 6px; margin-bottom: 16px; }
+  footer .dominos svg { width: 24px; height: 24px; }
+  footer .domein { font-family: var(--font-head); font-size: 15px; letter-spacing: 2.5px; }
+  footer .sub { font-size: 12px; color: var(--grijs-700); margin-top: 8px; }
+  footer .sub a { color: var(--green-500); text-decoration: none; }
+
+  /* ---------- sticky balk ---------- */
+  .stickybalk {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    background: var(--purple); color: var(--creme);
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    padding: 12px 20px; box-shadow: 0 -6px 24px rgba(41,39,56,.28);
+    transform: translateY(110%); transition: transform .45s cubic-bezier(.4,.1,.2,1);
+  }
+  .stickybalk.zichtbaar { transform: translateY(0); }
+  .stickybalk .s-tekst { font-size: 14.5px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+  .stickybalk .s-tekst svg { width: 20px; height: 20px; flex: 0 0 auto; }
+  @media (max-width: 640px) {
+    .stickybalk { gap: 12px; padding: 10px 14px; }
+    .stickybalk .s-lang { display: none; }
+    .stickybalk .s-tekst { font-size: 13px; }
+  }
+
+  /* ---------- popup ---------- */
+  .popup-achter {
+    display: none; position: fixed; inset: 0; background: rgba(41,39,56,.45); z-index: 100;
+    align-items: center; justify-content: center; padding: 24px;
+    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+  }
+  .popup-achter.zichtbaar { display: flex; }
+  .popup {
+    background: var(--creme); border-radius: 20px; max-width: 440px; width: 100%;
+    padding: 34px 30px 28px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  .popup .sluit {
+    position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border: none;
+    background: var(--creme-300); border-radius: 50%; cursor: pointer; font-size: 15px;
+    color: var(--purple); font-weight: 700; line-height: 1;
+  }
+  .popup .p-kicker { font-family: var(--font-head); font-size: 13px; letter-spacing: 3px; color: var(--green-400); }
+  .popup h3 { font-family: var(--font-head); font-weight: 400; font-size: 27px; margin: 6px 0 8px; }
+  .popup .p-sub { font-size: 14px; color: var(--purple-200); margin-bottom: 14px; line-height: 1.55; }
+  .progres { margin-bottom: 18px; }
+  .progres-info { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--green-500); margin-bottom: 6px; }
+  .progres-balk { height: 8px; background: var(--creme-300); border-radius: 6px; overflow: hidden; }
+  .progres-vul { height: 100%; background: var(--yellow); border-radius: 6px; transition: width .6s ease; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    section { padding: 52px 0; }
+    .hero { padding: 44px 0 56px; }
+    .hero .grid, .kijk .grid, .voorstel .grid, .auteur .grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero h1 { font-size: 42px; }
+    h2 { font-size: 29px; }
+    .boekwrap { order: -1; }
+    .flip-hero { order: -1; }
+    .herken-grid { grid-template-columns: 1fr; gap: 28px; }
+    .herken-visual { order: 1; }
+    .flipboek { margin-left: auto; margin-right: auto; transform: scale(1); }
+    .flip-hero .flipnav { margin: 14px auto 0; transform: none; }
+    .boek { width: 240px; height: 348px; padding: 18px 14px 15px; }
+    .b-titel { font-size: 25px; }
+    .b-dominos svg { width: 23px; height: 23px; }
+    .b-auteur { font-size: 14px; }
+    .stappen { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .voorstel .boekwrap { display: none; }
+  }
+  @media (max-width: 640px) {
+    .cyclus-wiel { display: none; }
+    .cyclus { display: flex; }
+  }
+  @media (max-width: 520px) {
+    .stappen { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+    .cyclus .c-pijl { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="domino" viewBox="0 0 551.54 551.54">
+      <path d="M447.21,117.88h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59V124.47c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M361.54,132.52h-30.76c-3.66,0-6.59,2.93-6.59,6.59v242.38c0,3.66,2.93,6.59,6.59,6.59h30.76c3.66,0,6.59-2.93,6.59-6.59v-242.38c0-3.66-2.93-6.59-6.59-6.59Z"/>
+      <path d="M321.26,166.21l-28.56-9.52c-3.66-1.46-7.32,0-8.79,4.39l-78.35,229.93c-1.46,3.66,0,7.32,4.39,8.05l28.56,9.52c3.66,1.46,7.32,0,8.79-4.39l78.35-229.93c1.46-3.66,0-7.32-4.39-8.05Z"/>
+      <path d="M253.16,244.56l-22.7-20.5c-2.93-2.2-6.59-2.2-9.52,0L55.45,401.99c-2.2,2.93-2.2,6.59,0,9.52l22.7,20.5c2.93,2.2,6.59,2.2,9.52,0l165.49-177.94c2.2-2.93,2.2-6.59,0-9.52Z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="#81b6a2"/>
+      <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="#fdfcf1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="bar">
+    @@LOGO@@
+    <a class="btn klein" href="#aanmelden" id="open-popup">Ja, ik wil de gratis preview</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kicker">Het nieuwe boek van Dr. Roel Hermans</span>
+        <h1>Wat als het<br>nu <span class="marker">wél</span> lukt?</h1>
+        <p class="sub">Ontdek de methode achter blijvende leefstijlverandering. Geen goede voornemens die stranden, maar een wetenschappelijk onderbouwde aanpak in vier stappen: verkennen, begrijpen, veranderen en behouden.</p>
+
+        <div class="hero-cta" id="aanmelden">
+          <a class="btn groot" href="#aanmelden">Ja, ik wil de gratis preview</a>
+          <p class="micro">Gratis · je hoort als eerste wanneer de voorverkoop start · geen spam</p>
+        </div>
+      </div>
+
+      <div class="flip-hero">
+        <div class="flipboek" id="flipboek">
+
+          <!-- vaste rechterpagina (einde preview) -->
+          <div class="basis-rechts">
+            <div class="zijde">
+              <div class="p-kick">Gedrag verkennen</div>
+              <div class="p-titel">Jouw gedragsfoto</div>
+              <div class="p-tekst p-vervaagd">
+                <p>Voordat je ook maar iets verandert, breng je eerst in kaart hoe jouw leefstijlgedrag er nu écht uitziet. Niet zoals je denkt dat het eruitziet, maar zoals het zich dag in dag uit afspeelt: wat je doet, wanneer, waar en met wie.</p>
+                <p>Daarvoor gebruik je de zes pijlers van leefstijlgedrag: structuur, patroon, stijl, omgeving, mindset en regulatie…</p>
+              </div>
+              <div class="p-slot">
+                <div class="slot-titel">Hier stopt het inkijkje</div>
+                <p>Benieuwd hoe het verder gaat? Ontvang de volledige preview gratis in je inbox.</p>
+                <a class="btn" href="#aanmelden">Ja, ik wil de gratis preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- vel 3 -->
+          <div class="vel">
+            <div class="zijde voor">
+              <div class="p-kick">Wat als het nu wél lukt?</div>
+              <div class="p-titel">Stel je eens voor dat…</div>
+              <ul class="p-lijst">
+                <li><svg><use href="#check"/></svg>…je niet meer iedere keer opnieuw hoeft te beginnen.</li>
+                <li><svg><use href="#check"/></svg>…gezonde keuzes steeds vanzelfsprekender aanvoelen.</li>
+                <li><svg><use href="#check"/></svg>…je begrijpt waarom je doet wat je doet.</li>
+                <li><svg><use href="#check"/></svg>…je op moeilijke momenten weet hoe je jezelf kunt bijsturen.</li>
+              </ul>
+              <div class="p-nr rechts">7</div>
+            </div>
+            <div class="zijde achter">
+              <div class="p-kick">De methode</div>
+              <div class="p-titel">Vier dominostenen</div>
+              <div class="p-stenen">
+                <div class="p-steen"><div class="nr">01</div><div class="naam">Verkennen</div><p>Hoe ziet je gedrag er nu uit? En wat wil je?</p></div>
+                <div class="p-steen"><div class="nr">02</div><div class="naam">Begrijpen</div><p>Waardoor ontstaat jouw gedrag?</p></div>
+                <div class="p-steen"><div class="nr">03</div><div class="naam">Veranderen</div><p>Een gedragsplan op maat.</p></div>
+                <div class="p-steen"><div class="nr">04</div><div class="naam">Behouden</div><p>Volhouden, óók bij terugval.</p></div>
+              </div>
+              <div class="p-nr">8</div>
+            </div>
+          </div>
+
+          <!-- vel 2 -->
+          <div class="vel">
+            <div class="zijde voor">
+              <div class="p-kick">Herken jij dit?</div>
+              <div class="p-titel">De riedel die zich blijft herhalen</div>
+              <div class="p-tekst">
+                <p>Goede voornemens. Actie. Terugval. Frustratie, schuldgevoel en <em>"het lukt me nooit"</em>. En na een tijdje… toch weer opnieuw beginnen.</p>
+                <p>Je bent niet de enige. Dit is precies hoe de meeste mensen proberen hun leefstijl te veranderen.</p>
+              </div>
+              <div class="p-nr rechts">5</div>
+            </div>
+            <div class="zijde achter">
+              <div class="p-kick">Waarom het zo vaak mislukt</div>
+              <div class="p-titel">Het ligt niet aan jou</div>
+              <ul class="p-lijst">
+                <li><svg><use href="#check"/></svg>We beginnen met veranderen, nog vóórdat we het probleem echt begrijpen.</li>
+                <li><svg><use href="#check"/></svg>We richten ons meteen op de oplossing.</li>
+                <li><svg><use href="#check"/></svg>We zoeken de oorzaak bij onszelf: te weinig discipline, niet het juiste moment.</li>
+              </ul>
+              <div class="p-nr">6</div>
+            </div>
+          </div>
+
+          <!-- vel 1 (cover) -->
+          <div class="vel">
+            <div class="zijde voor foto">
+              <div class="b-rug">LEEFSTIJLLAB</div>
+              <div class="b-grad"></div>
+              <div class="c-hint">Klik om te bladeren →</div>
+              <div class="b-onder">
+                <div class="b-titel">Wat als het<br>nu <em>wél</em> lukt?</div>
+                <div class="b-sub">De methode achter blijvende leefstijlverandering</div>
+                <div class="b-lijn"></div>
+                <div class="b-rol">Gedragswetenschapper</div>
+                <div class="b-auteur">DR. ROEL HERMANS</div>
+              </div>
+            </div>
+            <div class="zijde achter">
+              <div class="p-kick">Voorwoord</div>
+              <div class="p-titel">De gedragsbril</div>
+              <div class="p-tekst">
+                <p>Dit boek leert je anders kijken naar leefstijl. Niet naar <em>wat</em> je doet, maar naar <em>waardoor</em> je het doet.</p>
+                <p>Gedrag is niet goed of fout, het is verklaarbaar. En zodra je dat ziet, verandert alles.</p>
+              </div>
+              <div class="p-nr">4</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flipnav">
+          <button class="fn" id="fn-terug" aria-label="Vorige pagina">‹</button>
+          <span class="fliphint">Klik op het boek om te bladeren</span>
+          <button class="fn" id="fn-verder" aria-label="Volgende pagina">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HERKEN JE DIT ================= -->
+<section class="sectie-wit herken">
+  <div class="wrap">
+    <div class="herken-grid">
+      <div class="herken-visual">
+    <div class="cyclus-wiel">
+      <svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De cyclus van goede voornemens tot opnieuw beginnen">
+        <defs>
+          <marker id="cmk" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#65937d"/>
+          </marker>
+        </defs>
+
+        <!-- doorlopende ring -->
+        <circle cx="380" cy="290" r="215" fill="none" stroke="#b3d9c5" stroke-width="2"/>
+
+        <!-- richtingspijlen op de ring (met de klok mee) -->
+        <g stroke="#65937d" stroke-width="2.5" fill="none" marker-end="url(#cmk)">
+          <path d="M 487 104 A 215 215 0 0 1 524 130"/>
+          <path d="M 593 260 A 215 215 0 0 1 594 305"/>
+          <path d="M 529 445 A 215 215 0 0 1 500 468"/>
+          <path d="M 260 468 A 215 215 0 0 1 225 439"/>
+          <path d="M 166 312 A 215 215 0 0 1 166 268"/>
+          <path d="M 260 112 A 215 215 0 0 1 293 94"/>
+        </g>
+
+        <!-- midden -->
+        <use href="#domino" x="362" y="222" width="36" height="36" fill="#81b6a2"/>
+        <text x="380" y="288" text-anchor="middle" font-family="'Red Hat Display', Arial, sans-serif" font-size="14" font-style="italic" fill="#737d7d">…en zo herhaalt</text>
+        <text x="380" y="308" text-anchor="middle" font-family="'Red Hat Display', Arial, sans-serif" font-size="14" font-style="italic" fill="#737d7d">het zich, keer op keer</text>
+
+        <!-- chips op de ring -->
+        <g font-family="'Red Hat Display', Arial, sans-serif" font-size="15" font-weight="700" fill="#292738">
+          <rect x="290" y="52" width="180" height="46" rx="23" fill="#fefdf7" stroke="#e8e7cd" stroke-width="1.5"/>
+          <text x="380" y="80" text-anchor="middle">Goede voornemens</text>
+
+          <rect x="518" y="160" width="96" height="46" rx="23" fill="#fefdf7" stroke="#e8e7cd" stroke-width="1.5"/>
+          <text x="566" y="188" text-anchor="middle">Actie</text>
+
+          <rect x="504" y="374" width="124" height="46" rx="23" fill="#fefdf7" stroke="#e8e7cd" stroke-width="1.5"/>
+          <text x="566" y="402" text-anchor="middle">Terugval</text>
+
+          <rect x="258" y="482" width="244" height="46" rx="23" fill="#fefdf7" stroke="#e8e7cd" stroke-width="1.5"/>
+          <text x="380" y="510" text-anchor="middle">Frustratie &amp; schuldgevoel</text>
+
+          <rect x="97" y="374" width="194" height="46" rx="23" fill="#f6fdc3" stroke="#cfe261" stroke-width="1.5"/>
+          <text x="194" y="402" text-anchor="middle">“Het lukt me nooit”</text>
+
+          <rect x="97" y="160" width="194" height="46" rx="23" fill="#fefdf7" stroke="#e8e7cd" stroke-width="1.5"/>
+          <text x="194" y="188" text-anchor="middle">Opnieuw beginnen…</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cyclus">
+      <span class="chip">Goede voornemens</span><span class="c-pijl">→</span>
+      <span class="chip">Actie</span><span class="c-pijl">→</span>
+      <span class="chip">Terugval</span><span class="c-pijl">→</span>
+      <span class="chip">Frustratie &amp; schuldgevoel</span><span class="c-pijl">→</span>
+      <span class="chip rood">“Het lukt me nooit”</span><span class="c-pijl">→</span>
+      <span class="chip">Opnieuw beginnen…</span>
+    </div>
+
+      </div>
+      <div class="herken-tekst">
+        <span class="kicker">Herken je dit?</span>
+        <h2>Elke keer opnieuw beginnen en toch weer terugvallen</h2>
+        <p class="intro">Gezonder eten, meer bewegen, beter slapen, minder drinken. Je weet wat je wilt. En toch loopt het steeds op dezelfde manier.</p>
+        <p class="uitleg">Je bent niet de enige. Dit is precies hoe de meeste mensen hun leefstijl proberen te veranderen. En het ligt niet aan te weinig discipline of motivatie. <strong>Het mislukt omdat we beginnen met veranderen, vóórdat we ons eigen gedrag echt begrijpen.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NIEUWE KIJK ================= -->
+<section class="kijk">
+  <div class="wrap">
+    <div class="intro">
+      <span class="kicker">De gedragsbril</span>
+      <h2>Gedrag is niet goed of fout, het is verklaarbaar</h2>
+      <p>Je leefstijl is gedrag. En gedrag heeft altijd een functie: het levert je iets op. Wat je doet is het zichtbare topje van de ijsberg. Onder de waterlijn liggen de krachten die jouw gedrag sturen. Blijvende leefstijlverandering begint daarom niet met veranderen, maar met verkennen en begrijpen.</p>
+    </div>
+    <div class="ijsberg-kaart">
+      @@IJSBERG@@
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHODE ================= -->
+<section class="methode">
+  <div class="wrap">
+    <span class="kicker">De methode</span>
+    <h2>Vier stappen naar blijvende verandering</h2>
+    <p class="intro">In het boek doorloop je stap voor stap de LeefstijlLab-methode: dezelfde wetenschappelijk onderbouwde aanpak waarmee al honderden leefstijlprofessionals zijn opgeleid.</p>
+
+    <div class="stappen">
+      <div class="stapkaart">
+        <div class="nr">1</div>
+        <h3>Verkennen</h3>
+        <p>Breng je huidige én gewenste leefstijlgedrag in kaart langs zes pijlers: structuur, patroon, stijl, omgeving, mindset en regulatie.</p>
+        <div class="levert">→ Jouw gedragsfoto</div>
+      </div>
+      <div class="stapkaart">
+        <div class="nr">2</div>
+        <h3>Begrijpen</h3>
+        <p>Ontdek waardoor jouw gedrag ontstaat: welke persoonlijke en omgevingsfactoren jouw verandering ondersteunen of juist belemmeren.</p>
+        <div class="levert">→ Jouw gedragsanalyse</div>
+      </div>
+      <div class="stapkaart">
+        <div class="nr">3</div>
+        <h3>Veranderen</h3>
+        <p>Stel een persoonlijk gedragsplan op met technieken die passen bij jouw situatie. Geen algemene adviezen, maar acties die werken in jouw dagelijks leven.</p>
+        <div class="levert">→ Jouw gedragsplan</div>
+      </div>
+      <div class="stapkaart">
+        <div class="nr">4</div>
+        <h3>Behouden</h3>
+        <p>Leer volhouden: gewoontevorming, zelfregulatie, een ondersteunende omgeving en het opvangen van terugval, want terugval hoort erbij.</p>
+        <div class="levert">→ Jouw behoudsplan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STEL JE VOOR ================= -->
+<section class="voorstel">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kicker">Wat als het nu wél lukt?</span>
+        <h2>Stel je eens voor dat…</h2>
+        <ul>
+          <li><svg><use href="#check"/></svg>…je niet meer iedere keer opnieuw hoeft te beginnen.</li>
+          <li><svg><use href="#check"/></svg>…gezonde keuzes steeds vanzelfsprekender aanvoelen.</li>
+          <li><svg><use href="#check"/></svg>…je begrijpt waarom je doet wat je doet.</li>
+          <li><svg><use href="#check"/></svg>…je ook op moeilijke momenten weet hoe je jezelf kunt bijsturen.</li>
+          <li><svg><use href="#check"/></svg>…je niet meer hoeft te hópen dat het deze keer lukt, maar erop kunt vertrouwen dat je weet hoe.</li>
+        </ul>
+        <div class="cta-blok">
+          <a class="btn" href="#aanmelden">Ja, ik wil de gratis preview</a>
+        </div>
+      </div>
+      <div class="boekwrap">
+        <div class="boek" style="transform: rotateY(12deg) rotateX(2deg); box-shadow: 24px 28px 50px rgba(41,39,56,.25), inset 8px 0 12px rgba(0,0,0,.28);">
+          <div class="b-rug">LEEFSTIJLLAB</div>
+          <div class="b-grad"></div>
+          <div class="b-onder">
+            <div class="b-titel">Wat als het<br>nu <em>wél</em> lukt?</div>
+            <div class="b-sub">De methode achter blijvende leefstijlverandering</div>
+            <div class="b-lijn"></div>
+            <div class="b-rol">Gedragswetenschapper</div>
+            <div class="b-auteur">DR. ROEL HERMANS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUTEUR ================= -->
+<section class="auteur">
+  <div class="wrap">
+    <div class="grid">
+      <img src="assets/roel-boek.jpg" alt="Dr. Roel Hermans leest een boek bij het raam" loading="lazy">
+      <div>
+        <span class="kicker">Over de auteur</span>
+        <h2>Dr. Roel Hermans</h2>
+        <p>Gedragswetenschapper en oprichter van LeefstijlLab, hét kennis- en opleidingsinstituut voor gedragsverandering in de leefstijlsector. Al sinds zijn jeugd gefascineerd door één vraag: <em>waarom doen mensen wat ze doen?</em></p>
+        <p>Die nieuwsgierigheid leidde tot een doctorstitel, een loopbaan als onderzoeker aan de Radboud Universiteit en de Universiteit Maastricht, en praktijkervaring bij het Voedingscentrum en Jumbo Supermarkten. In dit boek vertaalt hij vijftien jaar wetenschap naar een aanpak die iedereen kan toepassen.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="cijfer">2013</div><div class="lbl">Gepromoveerd aan de Radboud Universiteit</div></div>
+      <div class="stat"><div class="cijfer">43</div><div class="lbl">Wetenschappelijke publicaties over leefstijl</div></div>
+      <div class="stat"><div class="cijfer">2020</div><div class="lbl">Oprichting van LeefstijlLab</div></div>
+      <div class="stat"><div class="cijfer">100+</div><div class="lbl">Leefstijlprofessionals opgeleid</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLOT CTA ================= -->
+<section class="slot">
+  <div class="wrap">
+    <span class="kicker">Binnenkort verkrijgbaar</span>
+    <h2>Wees er als eerste bij</h2>
+    <p>Laat je voornaam en e-mailadres achter en ontvang een gratis preview van het boek. Jij hoort het als eerste zodra de voorverkoop start.</p>
+    <div class="formcard">
+      <form class="preview-form" novalidate>
+        <div class="veld"><input type="text" name="voornaam" placeholder="Je voornaam" required autocomplete="given-name"></div>
+        <div class="veld"><input type="email" name="email" placeholder="Je e-mailadres" required autocomplete="email"></div>
+        <button class="btn" type="submit">Ja, ik wil de gratis preview</button>
+      </form>
+      <div class="succes"><strong>Gelukt!</strong> Check je inbox, de preview komt eraan.</div>
+      <p class="micro">Geen spam, uitschrijven kan altijd.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="dominos">
+    <svg fill="#81b6a2"><use href="#domino"/></svg>
+    <svg fill="#def472"><use href="#domino"/></svg>
+    <svg fill="#292738"><use href="#domino"/></svg>
+  </div>
+  <div class="domein">watalshetnuwellukt.nl</div>
+  <p class="sub">Een boek van <a href="https://www.leefstijllab.nl">LeefstijlLab</a> · © 2026</p>
+</footer>
+
+<!-- ================= STICKY BALK ================= -->
+<div class="stickybalk" id="stickybalk">
+  <div class="s-tekst"><svg fill="#def472"><use href="#domino"/></svg><span>Ontvang een gratis preview van het boek<span class="s-lang">, en hoor als eerste wanneer de voorverkoop start</span></span></div>
+  <button class="btn klein" id="sticky-cta">Ja, ik wil de gratis preview</button>
+</div>
+
+<!-- ================= POPUP ================= -->
+<div class="popup-achter" id="popup">
+  <div class="popup">
+    <button class="sluit" aria-label="Sluiten" onclick="sluitPopup()">✕</button>
+    <div class="p-kicker">Gratis preview</div>
+    <h3>Wil je de gratis preview?</h3>
+    <p class="p-sub">Laat je voornaam en e-mailadres achter en ontvang als eerste een preview van <em>Wat als het nu wél lukt?</em></p>
+    <div class="progres">
+      <div class="progres-info"><span>Je bent er bijna</span><span>80%</span></div>
+      <div class="progres-balk"><div class="progres-vul" style="width:80%"></div></div>
+    </div>
+    <form class="preview-form" novalidate>
+      <div class="veld"><input type="text" name="voornaam" placeholder="Je voornaam" required></div>
+      <div class="veld"><input type="email" name="email" placeholder="Je e-mailadres" required></div>
+      <button class="btn" type="submit">Ja, ik wil de gratis preview</button>
+    </form>
+    <div class="succes"><strong>Gelukt!</strong> Check je inbox, de preview komt eraan.</div>
+  </div>
+</div>
+
+<script>
+  // ====== KIT-KOPPELING ======
+  // Plak hier de action-URL van je Kit (ConvertKit) formulier, bijv.:
+  // "https://app.kit.com/forms/1234567/subscriptions"
+  const KIT_FORM_ACTION = "";
+
+  document.querySelectorAll(".preview-form").forEach(form => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const voornaam = form.querySelector('[name="voornaam"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      if (!voornaam || !/.+@.+\..+/.test(email)) {
+        form.querySelectorAll("input").forEach(i => { if(!i.value.trim()) i.style.borderColor = "#db2b30"; });
+        return;
+      }
+      if (KIT_FORM_ACTION) {
+        try {
+          const data = new FormData();
+          data.append("email_address", email);
+          data.append("fields[first_name]", voornaam);
+          await fetch(KIT_FORM_ACTION, { method: "POST", body: data, headers: { "Accept": "application/json" } });
+        } catch (err) { /* toon alsnog succes; Kit verwerkt dubbel netjes */ }
+      }
+      form.style.display = "none";
+      const s = form.parentElement.querySelector(".succes");
+      if (s) s.style.display = "block";
+      const pop = form.closest(".popup");
+      if (pop) {
+        const vul = pop.querySelector(".progres-vul");
+        if (vul) vul.style.width = "100%";
+        const inf = pop.querySelectorAll(".progres-info span");
+        if (inf.length === 2) { inf[0].textContent = "Gelukt!"; inf[1].textContent = "100%"; }
+      }
+      try { localStorage.setItem("ll_aangemeld", "1"); } catch(e) {}
+      const sb = document.getElementById("stickybalk"); if (sb) sb.classList.remove("zichtbaar");
+    });
+  });
+
+  // ====== BLADERBOEK ======
+  const vellen = [...document.querySelectorAll('#flipboek .vel')].reverse(); // cover eerst
+  let omgeslagen = 0;
+  const fnTerug = document.getElementById('fn-terug');
+  const fnVerder = document.getElementById('fn-verder');
+  function zetZ() {
+    vellen.forEach((v, i) => { v.style.zIndex = v.classList.contains('om') ? 10 + i : 20 - i; });
+  }
+  function zetKnoppen() {
+    fnTerug.disabled = omgeslagen === 0;
+    fnVerder.disabled = omgeslagen === vellen.length;
+  }
+  function bladerVerder() {
+    if (omgeslagen >= vellen.length) return;
+    const v = vellen[omgeslagen];
+    v.classList.add('om'); v.style.zIndex = 40;
+    setTimeout(zetZ, 880);
+    omgeslagen++; zetKnoppen(); document.getElementById('flipboek').classList.toggle('open', omgeslagen > 0);
+  }
+  function bladerTerug() {
+    if (omgeslagen <= 0) return;
+    omgeslagen--;
+    const v = vellen[omgeslagen];
+    v.classList.remove('om'); v.style.zIndex = 40;
+    setTimeout(zetZ, 880);
+    zetKnoppen(); document.getElementById('flipboek').classList.toggle('open', omgeslagen > 0);
+  }
+  vellen.forEach(v => v.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    v.classList.contains('om') ? bladerTerug() : bladerVerder();
+  }));
+  fnVerder.addEventListener('click', bladerVerder);
+  fnTerug.addEventListener('click', bladerTerug);
+  zetZ(); zetKnoppen();
+
+  // ====== POPUP (één keer, na 55% scroll of 20 sec) ======
+  let popupGetoond = false;
+  function toonPopup() {
+    if (popupGetoond) return;
+    try { if (localStorage.getItem("ll_popup") || localStorage.getItem("ll_aangemeld")) return; } catch(e) {}
+    popupGetoond = true;
+    document.getElementById("popup").classList.add("zichtbaar");
+    try { localStorage.setItem("ll_popup", "1"); } catch(e) {}
+  }
+  function sluitPopup() { document.getElementById("popup").classList.remove("zichtbaar"); }
+  // alle preview-knoppen openen de popup
+  document.querySelectorAll('a[href="#aanmelden"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("popup").classList.add("zichtbaar");
+    });
+  });
+
+  // ====== STICKY BALK ======
+  const balk = document.getElementById("stickybalk");
+  document.getElementById("sticky-cta").addEventListener("click", () => {
+    document.getElementById("popup").classList.add("zichtbaar");
+  });
+  function balkCheck() {
+    let aangemeld = false;
+    try { aangemeld = !!localStorage.getItem("ll_aangemeld"); } catch(e) {}
+    balk.classList.toggle("zichtbaar", !aangemeld && window.scrollY > 600);
+  }
+  window.addEventListener("scroll", balkCheck, { passive: true });
+  balkCheck();
+
+  // ====== EXIT-INTENT POPUP ======
+  let exitGetoond = false;
+  document.addEventListener("mouseout", (e) => {
+    if (exitGetoond || e.clientY > 24 || e.relatedTarget) return;
+    try { if (localStorage.getItem("ll_aangemeld") || localStorage.getItem("ll_exit")) return; } catch(err) {}
+    if (document.getElementById("popup").classList.contains("zichtbaar")) return;
+    exitGetoond = true;
+    const kk = document.querySelector("#popup .p-kicker");
+    if (kk) kk.textContent = "Voordat je gaat…";
+    document.getElementById("popup").classList.add("zichtbaar");
+    try { localStorage.setItem("ll_exit", "1"); } catch(err) {}
+  });
+  window.addEventListener("scroll", () => {
+    const d = document.documentElement;
+    if (window.scrollY / (d.scrollHeight - d.clientHeight) > 0.55) toonPopup();
+  }, { passive: true });
+  setTimeout(toonPopup, 20000);
+  document.getElementById("popup").addEventListener("click", (e) => { if (e.target.id === "popup") sluitPopup(); });
+</script>
+
+</body>
+</html>
